@@ -6,13 +6,7 @@ import xml_maker
 
 
 def test():
-    parser = argparse.ArgumentParser()
 
-    parser.add_argument('-i', help="path to the input data", type=str,
-                        default='/home/mila/teaching/user06/Public_Test/Profile/')
-    parser.add_argument('-o', help="path to the output data", type=str,
-                        default='/home/mila/teaching/user06/IFT6758/results/')
-    args = parser.parse_args()
     profile_filename = 'Profile.csv'
 
     profile_path = os.path.join(args.i, profile_filename)
@@ -28,9 +22,17 @@ def test():
     profile = Baseline.load_data(profile_path)
 
     for user in data['userid'].itertuple():
-        xml_maker.make_xml(save_dir=output_path, uid=user, age_group=data['age'], gender=data['gender'], extrovert=data['ext'],
-                           neurotic=data['neu'], agreeable=data['agr'], conscientious=data['con'], _open=data['ope'])
+        xml_maker.make_xml(save_dir=output_path, uid=user, age_group=data['age'][0], gender=data['gender'][0], extrovert=data['ext'][0],
+                           neurotic=data['neu'][0], agreeable=data['agr'][0], conscientious=data['con'][0], _open=data['ope'][0])
 
 
 if __name__ == '__main__':
+    parser = argparse.ArgumentParser()
+
+    parser.add_argument('-i', help="path to the input data", type=str,
+                        default='/home/mila/teaching/user06/Public_Test/Profile/')
+    parser.add_argument('-o', help="path to the output data", type=str,
+                        default='/home/mila/teaching/user06/IFT6758/results/')
+    args = parser.parse_args()
+
     test()
