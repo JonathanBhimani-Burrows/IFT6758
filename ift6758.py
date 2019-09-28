@@ -21,13 +21,12 @@ def test():
 
     data = Baseline.load_data(baseline_data_path)
     profile = Baseline.load_data(profile_path)
+    userids = profile['userid'].values
 
-    # pdb.set_trace()
-
-    for user in profile.itertuple():
-        id = user['userid']
-        make_xml(save_dir=output_path, uid=id, age_group=data['age'], gender=data['gender'], extrovert=data['ext'],
-                           neurotic=data['neu'], agreeable=data['agr'], conscientious=data['con'], _open=data['ope'])
+    for id in userids:
+        # pdb.set_trace()
+        make_xml(save_dir=output_path, uid=id, age_group=data['age'][0], gender=int(data['gender'][0]), extrovert=data['ext'][0],
+                 neurotic=data['neu'][0], agreeable=data['agr'][0], conscientious=data['con'][0], _open=data['ope'][0])
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
