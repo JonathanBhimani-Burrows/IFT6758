@@ -16,7 +16,7 @@ def test():
 
     # Baseline.eval(path=profile_path)
 
-    baseline_data_path = 'data\Baseline_data.csv'
+    baseline_data_path = 'data/Baseline_data.csv'
 
     data = Baseline.load_data(baseline_data_path)
     profile = Baseline.load_data(profile_path)
