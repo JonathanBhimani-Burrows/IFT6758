@@ -29,7 +29,6 @@ def test():
         make_xml(save_dir=output_path, uid=id, age_group=data['age'], gender=data['gender'], extrovert=data['ext'],
                            neurotic=data['neu'], agreeable=data['agr'], conscientious=data['con'], _open=data['ope'])
 
-
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
 
