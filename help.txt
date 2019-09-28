@@ -1,0 +1,13 @@
+DataScienceProject
+
+Putty:
+35.208.187.181
+
+user06
+Oifbgq09X72G
+
+
+
+
+module load miniconda/3
+conda activate
