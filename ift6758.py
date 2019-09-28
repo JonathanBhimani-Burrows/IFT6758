@@ -2,7 +2,7 @@ import argparse
 import os
 import Baseline
 import pandas as pd
-import utils.xml_maker
+from utils.xml_maker import make_xml
 
 
 def test():
@@ -28,7 +28,7 @@ def test():
     profile = Baseline.load_data(profile_path)
 
     for user in data['userid'].itertuple():
-        xml_maker.make_xml(save_dir=output_path, uid=user, age_group=data['age'], gender=data['gender'], extrovert=data['ext'],
+        make_xml(save_dir=output_path, uid=user, age_group=data['age'], gender=data['gender'], extrovert=data['ext'],
                            neurotic=data['neu'], agreeable=data['agr'], conscientious=data['con'], _open=data['ope'])
 
 
