@@ -14,9 +14,7 @@ gender_list = [
     ]
 
 def make_xml(save_dir, uid, age_group, gender, extrovert, neurotic, agreeable, conscientious, _open):
-    root = ET.Element('root')
-
-    ET.SubElement(root, 'user',
+    root = ET.Element('user', 
         id=str(uid),
         age_group=age_list[age_group],
         gender=gender_list[gender],
@@ -37,4 +35,4 @@ def make_xml(save_dir, uid, age_group, gender, extrovert, neurotic, agreeable, c
 
 
 if __name__ == "__main__":
-    make_xml('results', '123fsgfg45', 3, 0, 1.55, 2.3, 3.7, 1.1, 0.12)
+    make_xml('results', 'Test_maker', 3, 1, 1.55, 2.3, 3.7, 1.1, 0.12)
