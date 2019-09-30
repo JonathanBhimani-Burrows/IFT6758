@@ -17,7 +17,7 @@ def predict():
 
     # Baseline.eval(path=profile_path)
 
-    baseline_data_path = 'data/Baseline_data.csv'
+    baseline_data_path = '/home/mila/teaching/user06/IFT6758/data/Baseline_data.csv'
 
     data = Baseline.load_data(baseline_data_path)
     profile = Baseline.load_data(profile_path)
@@ -32,9 +32,9 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
 
     parser.add_argument('-i', help="path to the input data", type=str,
-                        default='../Public_Test/Profile/')
+                        default='/home/mila/teaching/user06/Public_Test/Profile/')
     parser.add_argument('-o', help="path to the output data", type=str,
-                        default='results/')
+                        default='/home/mila/teaching/user06/IFT6758/results/')
     args = parser.parse_args()
 
     predict()
