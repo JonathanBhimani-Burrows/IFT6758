@@ -13,6 +13,7 @@ def predict():
     profile_path = os.path.join(args.i, profile_filename)
     output_path = args.o
     if not os.path.exists(output_path):
+        print('create output_path:', output_path)
         os.makedirs(output_path)
 
     # Baseline.eval(path=profile_path)
@@ -34,7 +35,7 @@ if __name__ == '__main__':
     parser.add_argument('-i', help="path to the input data", type=str,
                         default='/home/mila/teaching/user06/Public_Test/Profile/')
     parser.add_argument('-o', help="path to the output data", type=str,
-                        default='/home/mila/teaching/user06/IFT6758/results/')
+                        default='/home/mila/teaching/user06/submissions/IFT6758/results/')
     args = parser.parse_args()
     print('input path:', args.i)
     print('output path:', args.o)
