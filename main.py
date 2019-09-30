@@ -27,7 +27,7 @@ def predict():
         # pdb.set_trace()
         make_xml(save_dir=output_path, uid=id, age_group=data['age'][0], gender=int(data['gender'][0]), extrovert=data['ext'][0],
                  neurotic=data['neu'][0], agreeable=data['agr'][0], conscientious=data['con'][0], _open=data['ope'][0])
-
+    print('end')
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
 
@@ -36,5 +36,6 @@ if __name__ == '__main__':
     parser.add_argument('-o', help="path to the output data", type=str,
                         default='/home/mila/teaching/user06/IFT6758/results/')
     args = parser.parse_args()
-
+    print('input path:', args.i)
+    print('output path:', args.o)
     predict()
