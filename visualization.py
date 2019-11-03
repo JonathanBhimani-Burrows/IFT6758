@@ -27,7 +27,7 @@ def visualize_comparison(x, y, gender, path):
     # Binning
     fig, ax = plt.subplots(ncols=1, sharey=True, figsize=(7, 4))
     fig.subplots_adjust(hspace=0.5, left=0.07, right=0.93)
-    hb = ax.hexbin(x, y, gridsize=11, cmap='viridis')
+    hb = ax.hexbin(x, y, gridsize=11, cmap='BuGn')
     ax.set(xlim=(0, 1), ylim=(0, 1))
     ax.set_title(gender)
     ax.set_xlabel('Beard')
@@ -35,13 +35,13 @@ def visualize_comparison(x, y, gender, path):
     cb = fig.colorbar(hb, ax=ax)
     cb.set_label('Count')
 
-    plt.savefig(os.path.join(path, gender + '_Beard-Mustache_bin_viridis.png'))
+    plt.savefig(os.path.join(path, gender + '_Beard-Mustache_bin_BuGn.png'))
 
 
     # Binning
     fig, ax = plt.subplots(ncols=1, sharey=True, figsize=(7, 4))
     fig.subplots_adjust(hspace=0.5, left=0.07, right=0.93)
-    hb = ax.hexbin(x, y, gridsize=11, cmap='plasma')
+    hb = ax.hexbin(x, y, gridsize=11, cmap='Reds')
     ax.set(xlim=(0, 1), ylim=(0, 1))
     ax.set_title(gender)
     ax.set_xlabel('Beard')
@@ -49,13 +49,13 @@ def visualize_comparison(x, y, gender, path):
     cb = fig.colorbar(hb, ax=ax)
     cb.set_label('Count')
 
-    plt.savefig(os.path.join(path, gender + '_Beard-Mustache_bin_plasma.png'))
+    plt.savefig(os.path.join(path, gender + '_Beard-Mustache_bin_Reds.png'))
 
 
     # Binning
     fig, ax = plt.subplots(ncols=1, sharey=True, figsize=(7, 4))
     fig.subplots_adjust(hspace=0.5, left=0.07, right=0.93)
-    hb = ax.hexbin(x, y, gridsize=11, cmap='magma')
+    hb = ax.hexbin(x, y, gridsize=11, cmap='Greys')
     ax.set(xlim=(0, 1), ylim=(0, 1))
     ax.set_title(gender)
     ax.set_xlabel('Beard')
@@ -63,13 +63,13 @@ def visualize_comparison(x, y, gender, path):
     cb = fig.colorbar(hb, ax=ax)
     cb.set_label('Count')
 
-    plt.savefig(os.path.join(path, gender + '_Beard-Mustache_bin_magma.png'))
+    plt.savefig(os.path.join(path, gender + '_Beard-Mustache_bin_greys.png'))
 
 
     # Binning
     fig, ax = plt.subplots(ncols=1, sharey=True, figsize=(7, 4))
     fig.subplots_adjust(hspace=0.5, left=0.07, right=0.93)
-    hb = ax.hexbin(x, y, gridsize=11, cmap='cividis')
+    hb = ax.hexbin(x, y, gridsize=11, cmap='Purples')
     ax.set(xlim=(0, 1), ylim=(0, 1))
     ax.set_title(gender)
     ax.set_xlabel('Beard')
@@ -77,7 +77,7 @@ def visualize_comparison(x, y, gender, path):
     cb = fig.colorbar(hb, ax=ax)
     cb.set_label('Count')
 
-    plt.savefig(os.path.join(path, gender + '_Beard-Mustache_bin_cividis.png'))
+    plt.savefig(os.path.join(path, gender + '_Beard-Mustache_bin_purples.png'))
 
 
 
