@@ -99,7 +99,7 @@ def visualize_comparison(x, y, x_title, y_title, path):
     plt.ylabel(y_title)
     plt.savefig(os.path.join(path, y_title + '_by_' + x_title + '.png'))
 
-def get_visualization(userids, output_path, profile):
+def get_visualization(userids, image_data, profile, output_path):
     print('get_visualization...')
     beards = []
     mustaches = []
@@ -171,4 +171,4 @@ if __name__ == '__main__':
 
     _, _, _, _, image_data = utils.dataloader.load_data(args.i)
 
-    get_visualization(userids, image_data, profile)
+    get_visualization(userids, image_data, profile, args.o)
