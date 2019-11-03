@@ -54,9 +54,9 @@ def get_visualization(userids, image_data, profile, output_path):
 
         genders_df.append(profile[profile['userid'] == uid]['gender'])
 
-        for cpt_user in range(len(genders_df)):
-            pdb.set_trace()
-            genders.append(genders_df[cpt_user][1])
+    for cpt_user in range(len(genders_df)):
+        pdb.set_trace()
+        genders.append(genders_df[cpt_user][1])
 
 
 
