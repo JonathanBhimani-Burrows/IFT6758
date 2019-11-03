@@ -19,7 +19,7 @@ import utils.dataloader
 
 def visualize_comparison(x, y, x_title, y_title, path):
     print('Visualize', y_title + '...')
-    pdb.set_trace()
+    # pdb.set_trace()
     plt.plot(x, y)
     plt.xlabel(x_title)
     plt.ylabel(y_title)
@@ -51,7 +51,7 @@ def get_visualization(userids, image_data, profile, output_path):
             beards.append(2)
             mustaches.append(2)
 
-        genders.append(profile[profile['userid'] == uid]['gender'])
+        genders.append(profile[profile['userid'] == uid]['gender'][1])
 
 
     visualize_comparison(genders, beards, 'gender', 'beard', output_path)
