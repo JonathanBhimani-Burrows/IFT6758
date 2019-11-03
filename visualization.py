@@ -33,8 +33,8 @@ def visualize_comparison(x_fem, y_fem, x_male, y_male, path):
     ax.set_title('female')
     ax.set_xlabel('Beard')
     ax.set_ylabel('Mustache')
-    # cb = fig.colorbar(hb, ax=ax)
-    # cb.set_label('Count')
+    cb = fig.colorbar(hb, ax=ax)
+    cb.set_label('Count')
 
     ax = axs[0]
     hb = ax.hexbin(x_male, y_male, gridsize=11, cmap='Purples')
@@ -42,8 +42,8 @@ def visualize_comparison(x_fem, y_fem, x_male, y_male, path):
     ax.set_title('male')
     ax.set_xlabel('Beard')
     ax.set_ylabel('Mustache')
-    cb = fig.colorbar(hb, ax=ax)
-    cb.set_label('Count')
+    # cb = fig.colorbar(hb, ax=ax)
+    # cb.set_label('Count')
 
     plt.savefig(os.path.join(path, 'Beard-Mustache_bin.png'))
 

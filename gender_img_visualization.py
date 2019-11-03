@@ -18,9 +18,6 @@ import utils.dataloader
 
 
 def visualize_comparison(x_fem, y_fem, x_male, y_male, path):
-    print('Visualize', gender + '...')
-
-
 
     plt.savefig(os.path.join(path, gender + '_Beard-Mustache_bin.png'))
 
@@ -29,7 +26,8 @@ def visualize_comparison(x_fem, y_fem, x_male, y_male, path):
 
 def get_visualization(userids, image_data, profile, output_path):
     print('get_visualization...')
-    female_beards = []
+    female = dict()
+    male = dict()
     male_beards = []
     female_mustaches = []
     male_mustaches = []
@@ -43,6 +41,8 @@ def get_visualization(userids, image_data, profile, output_path):
         uid_data = image_data[image_data['userId']==uid]
 
         # female
+        pdb.set_trace()
+
         if profile[profile['userid'] == uid]['gender'].tolist()[0] == 1:
             if len(uid_data) == 1:
                 mustache = image_data[image_data['userId']==uid]['facialHair_mustache'].iloc[0]
@@ -72,10 +72,7 @@ def get_visualization(userids, image_data, profile, output_path):
     #     print(len(genders))
 
 
-    print('UNCONCLUSIVE ==> male:', cpt_unconclusive_male, ', female:', cpt_unconclusive_female)
-    print('total:', len(userids), ' - perc of unconclusive:', (cpt_unconclusive_female + cpt_unconclusive_male)/len(userids)*100, '%' )
     visualize_comparison(female_beards, female_mustaches, male_beards, male_mustaches, output_path)
-    # visualize_comparison(male_beards, male_mustaches, 'male', output_path)
 
 
 if __name__ == '__main__':
