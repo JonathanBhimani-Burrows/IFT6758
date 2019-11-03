@@ -17,9 +17,9 @@ import pdb
 import utils.dataloader
 
 
-def visualize_comparison(x_fem, y_fem, x_male, y_male, path):
+# def visualize_comparison(x_fem, y_fem, x_male, y_male, path):
 
-    plt.savefig(os.path.join(path, gender + '_Beard-Mustache_bin.png'))
+    # plt.savefig(os.path.join(path, gender + '_Beard-Mustache_bin.png'))
 
 
 
@@ -28,13 +28,6 @@ def get_visualization(userids, image_data, profile, output_path):
     print('get_visualization...')
     female = dict()
     male = dict()
-    male_beards = []
-    female_mustaches = []
-    male_mustaches = []
-    # female_genders = []
-    # male_genders = []
-    cpt_unconclusive_female = 0
-    cpt_unconclusive_male = 0
 
 
     for uid in userids:
@@ -48,31 +41,15 @@ def get_visualization(userids, image_data, profile, output_path):
                 mustache = image_data[image_data['userId']==uid]['facialHair_mustache'].iloc[0]
                 beard = image_data[image_data['userId']==uid]['facialHair_beard'].iloc[0]
 
-                female_beards.append(beard)
-                female_mustaches.append(mustache)
-            else:
-                cpt_unconclusive_female += 1
         # male
         else:
             if len(uid_data) == 1:
                 mustache = image_data[image_data['userId']==uid]['facialHair_mustache'].iloc[0]
                 beard = image_data[image_data['userId']==uid]['facialHair_beard'].iloc[0]
 
-                male_beards.append(beard)
-                male_mustaches.append(mustache)
-            else:
-                cpt_unconclusive_male += 1
-
-        # genders.append(profile[profile['userid'] == uid]['gender'].tolist()[0])
-
-    # for cpt_user in range(len(genders_df)):
-    #     pdb.set_trace()
-    #     print(genders_df[cpt_user].tolist())
-    #     genders.append(genders_df[cpt_user].tolist()[0])
-    #     print(len(genders))
 
 
-    visualize_comparison(female_beards, female_mustaches, male_beards, male_mustaches, output_path)
+    # visualize_comparison(female_beards, female_mustaches, male_beards, male_mustaches, output_path)
 
 
 if __name__ == '__main__':
