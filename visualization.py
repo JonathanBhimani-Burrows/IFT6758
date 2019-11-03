@@ -17,7 +17,7 @@ import pdb
 import utils.dataloader
 
 
-def visualize_comparison(x, y, gender, path):
+def visualize_comparison(x_fem, y_fem, x_male, y_male, gender, path):
     print('Visualize', gender + '...')
     # pdb.set_trace()
     # plt.plot(x, y)
@@ -25,11 +25,21 @@ def visualize_comparison(x, y, gender, path):
     # plt.ylabel('mustache')
 
     # Binning
-    fig, ax = plt.subplots(ncols=1, sharey=True, figsize=(7, 4))
+    fig, axs = plt.subplots(ncols=1, sharey=True, figsize=(7, 4))
     fig.subplots_adjust(hspace=0.5, left=0.07, right=0.93)
-    hb = ax.hexbin(x, y, gridsize=11, cmap='Purples')
+    ax = axs[0]
+    hb = ax.hexbin(x_fem, y_fem, gridsize=11, cmap='Purples')
     ax.set(xlim=(0, 1), ylim=(0, 1))
-    ax.set_title(gender)
+    ax.set_title('female')
+    ax.set_xlabel('Beard')
+    ax.set_ylabel('Mustache')
+    # cb = fig.colorbar(hb, ax=ax)
+    # cb.set_label('Count')
+
+    ax = axs[0]
+    hb = ax.hexbin(x_male, y_male, gridsize=11, cmap='Purples')
+    ax.set(xlim=(0, 1), ylim=(0, 1))
+    ax.set_title('male')
     ax.set_xlabel('Beard')
     ax.set_ylabel('Mustache')
     cb = fig.colorbar(hb, ax=ax)
@@ -87,8 +97,8 @@ def get_visualization(userids, image_data, profile, output_path):
 
     print('UNCONCLUSIVE ==> male:', cpt_unconclusive_male, ', female:', cpt_unconclusive_female)
     print('total:', len(userids), ' - perc of unconclusive:', (cpt_unconclusive_female + cpt_unconclusive_male)/len(userids)*100, '%' )
-    visualize_comparison(female_beards, female_mustaches, 'female', output_path)
-    visualize_comparison(male_beards, male_mustaches, 'male', output_path)
+    visualize_comparison(female_beards, female_mustaches, male_beards, male_mustaches, output_path)
+    # visualize_comparison(male_beards, male_mustaches, 'male', output_path)
 
 
 if __name__ == '__main__':
