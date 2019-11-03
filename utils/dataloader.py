@@ -34,8 +34,25 @@ def load_data(datapath):
     relation_data = load_csv(datapath, 'Relation', 'Relation.csv')
     profile_data = load_csv(datapath, 'Profile', 'Profile.csv')
     image_data = load_csv(datapath, 'Image', 'oxford.csv')
+
+    age_bins = [0, 24, 34, 49, 1000]
+    profile_data = clean_profile_data(profile_data, age_bins)
+    
+    relation_data = clean_relation_data(relation_data)
             
     return nrc_text_data, liwc_text_data, relation_data, profile_data, image_data
+
+def clean_profile_data(profile_data, age_bins):
+    labels = list(range(len(age_bins) - 1))
+    profile_data['age'] = pd.cut(profile_data['age'], age_bins, labels=labels).astype('uint8')
+
+    return profile_data
+
+def clean_relation_data(relation_data):
+    relation_data['like_id'] = relation_data['like_id'].astype(str)
+
+    return relation_data
+
 
 
 if __name__ == "__main__":

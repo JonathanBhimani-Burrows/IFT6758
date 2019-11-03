@@ -8,3 +8,4 @@ pandas/*
 data/*
 
 results/
+*.mdl
