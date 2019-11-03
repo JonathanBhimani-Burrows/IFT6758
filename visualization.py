@@ -71,6 +71,7 @@ def get_visualization(userids, image_data, profile, output_path):
     cpt_unconclusive_female = 0
     cpt_unconclusive_male = 0
 
+
     for uid in userids:
         uid_data = image_data[image_data['userId']==uid]
 
@@ -105,6 +106,7 @@ def get_visualization(userids, image_data, profile, output_path):
 
 
     print('UNCONCLUSIVE ==> male:', cpt_unconclusive_male, ', female:', cpt_unconclusive_female)
+    print('total:', len(userids), ' - perc of unconclusive:', (cpt_unconclusive_female + cpt_unconclusive_male)/len(userids)*100, '%' )
     visualize_comparison(female_beards, female_mustaches, 'female', output_path)
     visualize_comparison(male_beards, male_mustaches, 'male', output_path)
 
