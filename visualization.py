@@ -17,42 +17,85 @@ import pdb
 import utils.dataloader
 
 
-def visualize_comparison(x, y, x_title, y_title, path):
-    print('Visualize', y_title + '...')
+def visualize_comparison(x, y, gender, path):
+    print('Visualize', gender + '...')
     # pdb.set_trace()
     plt.plot(x, y)
-    plt.xlabel(x_title)
-    plt.ylabel(y_title)
-    plt.savefig(os.path.join(path, y_title + '_by_' + x_title + '.png'))
+    plt.xlabel('beard')
+    plt.ylabel('mustache')
+
+    # Binning
+    fig, ax = plt.subplots(ncols=1, sharey=True, figsize=(7, 4))
+    fig.subplots_adjust(hspace=0.5, left=0.07, right=0.93)
+    hb = ax.hexbin(x, y, gridsize=50, cmap='inferno')
+    ax.set(xlim=(0, 1), ylim=(0, 1))
+    ax.set_title(gender)
+    ax.set_xlabel('Beard')
+    ax.set_ylabel('Mustache')
+    cb = fig.colorbar(hb, ax=ax)
+    cb.set_label('Probability')
+
+    plt.savefig(os.path.join(path, gender + '_Beard-Mustache_bin.png'))
+
+
+def table_compare(x, y, z, x_title, y_title, z_title, path):
+    def has_attr(cpt, gender):
+        if y[cpt] == 1:
+            dict_gender[gender][y_title] += 1
+        if z[cpt] == 1:
+            dict_gender[gender][z_title] += 1
+
+    dict_gender = {'male': {'beard': 0, 'mustache': 0, 'unconclusive_image': 0}, 'female': {'beard': 0, 'mustache': 0, 'unconclusive_image': 0}}
+    for cpt in range(len(x)):
+        if x[cpt] == 1:
+            gender = 'female'
+            has_attr(cpt, gender)
+        else:
+            gender = 'male'
+            has_attr(cpt, gender)
+
+    print('dict of gender')
+    print(dict)
+
+
+
 
 def get_visualization(userids, image_data, profile, output_path):
     print('get_visualization...')
-    beards = []
-    mustaches = []
-    genders = []
-    genders_df = []
+    female_beards = []
+    male_beards = []
+    female_mustaches = []
+    male_mustaches = []
+    # female_genders = []
+    # male_genders = []
+    cpt_unconclusive_female = 0
+    cpt_unconclusive_male = 0
+
     for uid in userids:
         uid_data = image_data[image_data['userId']==uid]
-        if len(uid_data) == 1:
-            mustache = image_data[image_data['userId']==uid]['facialHair_mustache'].iloc[0]
-            beard = image_data[image_data['userId']==uid]['facialHair_beard'].iloc[0]
 
-            if beard > 0:
-                beards.append(1)
+        # female
+        if profile[profile['userid'] == uid]['gender'].tolist()[0] == 1:
+            if len(uid_data) == 1:
+                mustache = image_data[image_data['userId']==uid]['facialHair_mustache'].iloc[0]
+                beard = image_data[image_data['userId']==uid]['facialHair_beard'].iloc[0]
+
+                female_beards.append(beard)
+                female_mustaches.append(mustache)
             else:
-                beards.append(0)
-
-
-            if mustache > 0:
-                mustaches.append(1)
-            else:
-                mustaches.append(0)
-
+                cpt_unconclusive_female += 1
+        # male
         else:
-            beards.append(2)
-            mustaches.append(2)
+            if len(uid_data) == 1:
+                mustache = image_data[image_data['userId']==uid]['facialHair_mustache'].iloc[0]
+                beard = image_data[image_data['userId']==uid]['facialHair_beard'].iloc[0]
 
-        genders.append(profile[profile['userid'] == uid]['gender'].tolist()[0])
+                male_beards.append(beard)
+                male_mustaches.append(mustache)
+            else:
+                cpt_unconclusive_male += 1
+
+        # genders.append(profile[profile['userid'] == uid]['gender'].tolist()[0])
 
     # for cpt_user in range(len(genders_df)):
     #     pdb.set_trace()
@@ -61,9 +104,9 @@ def get_visualization(userids, image_data, profile, output_path):
     #     print(len(genders))
 
 
-
-    visualize_comparison(genders, beards, 'gender', 'beard', output_path)
-    visualize_comparison(genders, mustaches, 'gender', 'mustache', output_path)
+    print('UNCONCLUSIVE ==> male:', cpt_unconclusive_male, ', female:', cpt_unconclusive_female)
+    visualize_comparison(female_beards, female_mustaches, 'female', output_path)
+    visualize_comparison(male_beards, male_mustaches, 'male', output_path)
 
 
 if __name__ == '__main__':
