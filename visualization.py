@@ -25,7 +25,7 @@ def visualize_comparison(x_fem, y_fem, x_male, y_male, path):
     # plt.ylabel('mustache')
 
     # Binning
-    fig, axs = plt.subplots(ncols=1, sharey=True, figsize=(7, 4))
+    fig, axs = plt.subplots(ncols=2, sharey=True, figsize=(7, 4))
     fig.subplots_adjust(hspace=0.5, left=0.07, right=0.93)
     ax = axs[0]
     hb = ax.hexbin(x_fem, y_fem, gridsize=11, cmap='Purples')
