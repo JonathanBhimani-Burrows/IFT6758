@@ -50,7 +50,7 @@ def get_visualization(userids, image_data, profile, output_path):
             beards.append(2)
             mustaches.append(2)
 
-        genders.append(profile[profile['userId'] == uid]['gender'])
+        genders.append(profile[profile['userid'] == uid]['gender'])
 
 
     visualize_comparison(genders, beards, 'gender', 'beard', output_path)
