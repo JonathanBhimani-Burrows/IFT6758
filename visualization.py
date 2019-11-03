@@ -1,19 +1,7 @@
-import numpy as np
 import matplotlib.pyplot as plt
-import os
-import pandas as pd
-from sklearn import metrics
-from sklearn.cluster import KMeans
-from sklearn.datasets import load_digits
-from sklearn.decomposition import PCA
-from sklearn.preprocessing import scale
-from sklearn.model_selection import KFold
 import argparse
 import os
 import Baseline
-import pandas as pd
-from utils.xml_maker import make_xml
-import pdb
 import utils.dataloader
 
 
