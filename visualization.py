@@ -30,6 +30,7 @@ def get_visualization(userids, image_data, profile, output_path):
     beards = []
     mustaches = []
     genders = []
+    genders_df = []
     for uid in userids:
         uid_data = image_data[image_data['userId']==uid]
         if len(uid_data) == 1:
@@ -51,7 +52,11 @@ def get_visualization(userids, image_data, profile, output_path):
             beards.append(2)
             mustaches.append(2)
 
-        genders.append(profile[profile['userid'] == uid]['gender'][1])
+        genders_df.append(profile[profile['userid'] == uid]['gender'])
+
+        for cpt_user in range(len(genders_df)):
+            genders.append(genders_df[cpt_user][1])
+
 
 
     visualize_comparison(genders, beards, 'gender', 'beard', output_path)
