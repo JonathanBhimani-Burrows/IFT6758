@@ -19,6 +19,7 @@ import utils.dataloader
 
 def visualize_comparison(x, y, x_title, y_title, path):
     print('Visualize', y_title + '...')
+    pdb.set_trace()
     plt.plot(x, y)
     plt.xlabel(x_title)
     plt.ylabel(y_title)
