@@ -14,7 +14,7 @@ def visualize_comparison(x_fem, y_fem, x_male, y_male, path):
 
     x_female = []
     y_female = []
-    for cpt in len(x_fem):
+    for cpt in range(len(x_fem)):
         if not x_fem[cpt] + y_fem[cpt] == 0:
             x_female.append(x_fem[cpt])
             y_female.append(y_fem[cpt])
@@ -22,7 +22,7 @@ def visualize_comparison(x_fem, y_fem, x_male, y_male, path):
 
     x_male_ = []
     y_male_ = []
-    for cpt in len(x_male):
+    for cpt in range(len(x_male)):
         if not x_male[cpt] + y_male[cpt] == 0:
             x_male_.append(x_male[cpt])
             y_male_.append(y_male[cpt])
