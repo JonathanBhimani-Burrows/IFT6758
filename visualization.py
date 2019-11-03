@@ -20,14 +20,14 @@ import utils.dataloader
 def visualize_comparison(x, y, gender, path):
     print('Visualize', gender + '...')
     # pdb.set_trace()
-    plt.plot(x, y)
-    plt.xlabel('beard')
-    plt.ylabel('mustache')
+    # plt.plot(x, y)
+    # plt.xlabel('beard')
+    # plt.ylabel('mustache')
 
     # Binning
     fig, ax = plt.subplots(ncols=1, sharey=True, figsize=(7, 4))
     fig.subplots_adjust(hspace=0.5, left=0.07, right=0.93)
-    hb = ax.hexbin(x, y, gridsize=11, cmap='inferno')
+    hb = ax.hexbin(x, y, gridsize=11, cmap='viridis')
     ax.set(xlim=(0, 1), ylim=(0, 1))
     ax.set_title(gender)
     ax.set_xlabel('Beard')
@@ -35,27 +35,49 @@ def visualize_comparison(x, y, gender, path):
     cb = fig.colorbar(hb, ax=ax)
     cb.set_label('Count')
 
-    plt.savefig(os.path.join(path, gender + '_Beard-Mustache_bin.png'))
+    plt.savefig(os.path.join(path, gender + '_Beard-Mustache_bin_viridis.png'))
 
 
-def table_compare(x, y, z, x_title, y_title, z_title, path):
-    def has_attr(cpt, gender):
-        if y[cpt] == 1:
-            dict_gender[gender][y_title] += 1
-        if z[cpt] == 1:
-            dict_gender[gender][z_title] += 1
+    # Binning
+    fig, ax = plt.subplots(ncols=1, sharey=True, figsize=(7, 4))
+    fig.subplots_adjust(hspace=0.5, left=0.07, right=0.93)
+    hb = ax.hexbin(x, y, gridsize=11, cmap='plasma')
+    ax.set(xlim=(0, 1), ylim=(0, 1))
+    ax.set_title(gender)
+    ax.set_xlabel('Beard')
+    ax.set_ylabel('Mustache')
+    cb = fig.colorbar(hb, ax=ax)
+    cb.set_label('Count')
 
-    dict_gender = {'male': {'beard': 0, 'mustache': 0, 'unconclusive_image': 0}, 'female': {'beard': 0, 'mustache': 0, 'unconclusive_image': 0}}
-    for cpt in range(len(x)):
-        if x[cpt] == 1:
-            gender = 'female'
-            has_attr(cpt, gender)
-        else:
-            gender = 'male'
-            has_attr(cpt, gender)
+    plt.savefig(os.path.join(path, gender + '_Beard-Mustache_bin_plasma.png'))
 
-    print('dict of gender')
-    print(dict)
+
+    # Binning
+    fig, ax = plt.subplots(ncols=1, sharey=True, figsize=(7, 4))
+    fig.subplots_adjust(hspace=0.5, left=0.07, right=0.93)
+    hb = ax.hexbin(x, y, gridsize=11, cmap='magma')
+    ax.set(xlim=(0, 1), ylim=(0, 1))
+    ax.set_title(gender)
+    ax.set_xlabel('Beard')
+    ax.set_ylabel('Mustache')
+    cb = fig.colorbar(hb, ax=ax)
+    cb.set_label('Count')
+
+    plt.savefig(os.path.join(path, gender + '_Beard-Mustache_bin_magma.png'))
+
+
+    # Binning
+    fig, ax = plt.subplots(ncols=1, sharey=True, figsize=(7, 4))
+    fig.subplots_adjust(hspace=0.5, left=0.07, right=0.93)
+    hb = ax.hexbin(x, y, gridsize=11, cmap='cividis')
+    ax.set(xlim=(0, 1), ylim=(0, 1))
+    ax.set_title(gender)
+    ax.set_xlabel('Beard')
+    ax.set_ylabel('Mustache')
+    cb = fig.colorbar(hb, ax=ax)
+    cb.set_label('Count')
+
+    plt.savefig(os.path.join(path, gender + '_Beard-Mustache_bin_cividis.png'))
 
 
 
