@@ -56,8 +56,8 @@ def get_visualization(userids, image_data, profile, output_path):
 
     for cpt_user in range(len(genders_df)):
         pdb.set_trace()
-        print(genders_df[cpt_user])
-        genders.append(genders_df[cpt_user][0])
+        print(genders_df[cpt_user].tolist())
+        genders.append(genders_df[cpt_user].tolist()[0])
         print(len(genders))
 
 
