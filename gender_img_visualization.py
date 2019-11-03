@@ -18,34 +18,11 @@ import utils.dataloader
 
 
 def visualize_comparison(x_fem, y_fem, x_male, y_male, path):
-    # print('Visualize', gender + '...')
-    # pdb.set_trace()
-    # plt.plot(x, y)
-    # plt.xlabel('beard')
-    # plt.ylabel('mustache')
+    print('Visualize', gender + '...')
 
-    # Binning
-    fig, axs = plt.subplots(ncols=1, sharey=True, figsize=(7, 4))
-    fig.subplots_adjust(hspace=0.5, left=0.07, right=0.93)
-    ax = axs[0]
-    hb = ax.hexbin(x_fem, y_fem, gridsize=11, cmap='Purples')
-    ax.set(xlim=(0, 1), ylim=(0, 1))
-    ax.set_title('female')
-    ax.set_xlabel('Beard')
-    ax.set_ylabel('Mustache')
-    # cb = fig.colorbar(hb, ax=ax)
-    # cb.set_label('Count')
 
-    ax = axs[0]
-    hb = ax.hexbin(x_male, y_male, gridsize=11, cmap='Purples')
-    ax.set(xlim=(0, 1), ylim=(0, 1))
-    ax.set_title('male')
-    ax.set_xlabel('Beard')
-    ax.set_ylabel('Mustache')
-    cb = fig.colorbar(hb, ax=ax)
-    cb.set_label('Count')
 
-    plt.savefig(os.path.join(path, 'Beard-Mustache_bin.png'))
+    plt.savefig(os.path.join(path, gender + '_Beard-Mustache_bin.png'))
 
 
 
