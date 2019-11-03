@@ -52,13 +52,13 @@ def get_visualization(userids, image_data, profile, output_path):
             beards.append(2)
             mustaches.append(2)
 
-        genders_df.append(profile[profile['userid'] == uid]['gender'])
+        genders.append(profile[profile['userid'] == uid]['gender'].tolist()[0])
 
-    for cpt_user in range(len(genders_df)):
-        pdb.set_trace()
-        print(genders_df[cpt_user].tolist())
-        genders.append(genders_df[cpt_user].tolist()[0])
-        print(len(genders))
+    # for cpt_user in range(len(genders_df)):
+    #     pdb.set_trace()
+    #     print(genders_df[cpt_user].tolist())
+    #     genders.append(genders_df[cpt_user].tolist()[0])
+    #     print(len(genders))
 
 
 
