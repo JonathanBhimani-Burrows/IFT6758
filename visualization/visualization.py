@@ -24,11 +24,26 @@ def visualize_comparison(x_fem, y_fem, x_male, y_male, path):
     # plt.xlabel('beard')
     # plt.ylabel('mustache')
 
+    x_female = []
+    y_female = []
+    for cpt in len(x_fem):
+        if not x_fem[cpt] + y_fem[cpt] == 0:
+            x_female.append(x_fem[cpt])
+            y_female.append(y_fem[cpt])
+
+
+    x_male_ = []
+    y_male_ = []
+    for cpt in len(x_male):
+        if not x_male[cpt] + y_male[cpt] == 0:
+            x_male_.append(x_male[cpt])
+            y_male_.append(y_male[cpt])
+
     # Binning
     fig, axs = plt.subplots(ncols=2, sharey=True, figsize=(7, 4))
     fig.subplots_adjust(hspace=0.5, left=0.07, right=0.93)
     ax = axs[1]
-    hb = ax.hexbin(x_fem, y_fem, gridsize=11, cmap='Purples')
+    hb = ax.hexbin(x_female, y_female, gridsize=11, cmap='Purples')
     ax.set(xlim=(0, 1), ylim=(0, 1))
     ax.set_title('female')
     ax.set_xlabel('Beard')
@@ -37,7 +52,7 @@ def visualize_comparison(x_fem, y_fem, x_male, y_male, path):
     cb.set_label('Count')
 
     ax = axs[0]
-    hb = ax.hexbin(x_male, y_male, gridsize=11, cmap='Purples')
+    hb = ax.hexbin(x_male_, y_male_, gridsize=11, cmap='Purples')
     ax.set(xlim=(0, 1), ylim=(0, 1))
     ax.set_title('male')
     ax.set_xlabel('Beard')
@@ -45,7 +60,7 @@ def visualize_comparison(x_fem, y_fem, x_male, y_male, path):
     cb = fig.colorbar(hb, ax=ax)
     cb.set_label('Count')
 
-    plt.savefig(os.path.join(path, 'Beard-Mustache_bin.png'))
+    plt.savefig(os.path.join(path, 'Beard-Mustache_bin_cleaned.png'))
 
 
 

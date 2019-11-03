@@ -23,40 +23,12 @@ import utils.dataloader
 
 
 
-
-def get_visualization(userids, image_data, profile, output_path):
-    print('get_visualization...')
-    female = dict()
-    male = dict()
-
-
-    for uid in userids:
-        uid_data = image_data[image_data['userId']==uid]
-
-        # female
-        pdb.set_trace()
-
-        if profile[profile['userid'] == uid]['gender'].tolist()[0] == 1:
-            if len(uid_data) == 1:
-                mustache = image_data[image_data['userId']==uid]['facialHair_mustache'].iloc[0]
-                beard = image_data[image_data['userId']==uid]['facialHair_beard'].iloc[0]
-
-        # male
-        else:
-            if len(uid_data) == 1:
-                mustache = image_data[image_data['userId']==uid]['facialHair_mustache'].iloc[0]
-                beard = image_data[image_data['userId']==uid]['facialHair_beard'].iloc[0]
-
-
-
-    # visualize_comparison(female_beards, female_mustaches, male_beards, male_mustaches, output_path)
-
-
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
 
     parser.add_argument('-i', help="path to the input data", type=str,
-                        default='/home/mila/teaching/user06/Train/')
+                        default='data/Train/')
+                        # default='/home/mila/teaching/user06/Train/')
     parser.add_argument('-o', help="path to the output data", type=str,
                         default='/home/mila/teaching/user06/submissions/IFT6758/results/visualization')
     args = parser.parse_args()
