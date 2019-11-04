@@ -38,19 +38,26 @@ class relations_agglomerator():
             i += 1
 
             if i % 1000 == 0:
-                print("Completed agglomeration for % 6d pages (% 3.1f%%)" %(i, i / total_pages))
+                print("Completed agglomeration for % 6d pages (% 3.1f%%)" %(i * 100, i / total_pages))
 
         print('Training complete for relation agglomerator')
 
     def predict(self, relation_data, uid):
         relation_data = relation_data[relation_data['userid'] == uid]
 
-        print(relation_data)
-        print(self.data)
+        liked_page_data = pd.merge(relation_data, self.data, on=['like_id'], how='left')
 
-        liked_page_data = pd.merge(relation_data, self.data, on=['like_id'], how='right')
+        if liked_page_data['age'].isnull().all() == False:
+            prediction = [liked_page_data['age'].value_counts().idxmax(),
+                          liked_page_data['gender'].value_counts().idxmax(),
+                          liked_page_data['ope'].mean(),
+                          liked_page_data['con'].mean(),
+                          liked_page_data['ext'].mean(),
+                          liked_page_data['agr'].mean(),
+                          liked_page_data['neu'].mean()]
 
-        print(liked_page_data)
+            return prediction
         
-        return 0 # [age, gender, ope, con, ext, agr, neu]
+        else:
+            return -1
     
