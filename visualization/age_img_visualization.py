@@ -1,21 +1,11 @@
-import numpy as np
-import matplotlib.pyplot as plt
-import os
-import pandas as pd
-from sklearn import metrics
-from sklearn.cluster import KMeans
-from sklearn.datasets import load_digits
-from sklearn.decomposition import PCA
-from sklearn.preprocessing import scale
-from sklearn.model_selection import KFold
 import argparse
 import os
-import Baseline
-import pandas as pd
-from utils.xml_maker import make_xml
-import pdb
-import utils.dataloader
 
+import sys
+sys.path.insert(1, 'C:\\Users\\fanny\\Documents\\IFT6758')
+import utils.dataloader
+import Baseline
+import pdb
 
 # def visualize_comparison(x_fem, y_fem, x_male, y_male, path):
 
@@ -67,24 +57,25 @@ def get_visualization(userids, image_data, profile, output_path):
                     age50[col].append(image_data[image_data['userId']==uid][col].iloc[0])
 
 
+
     with open(os.path.join(output_path, 'xx-24_oxford.csv'), 'w') as f:
         for key in age24.keys():
-            f.write("%s,%s\n" % (key, age24[key]))
+            f.write("%s,%s\n" % (key, str(age24[key])[1:-1]))
 
 
     with open(os.path.join(output_path, '25-34_oxford.csv'), 'w') as f:
         for key in age34.keys():
-            f.write("%s,%s\n" % (key, age24[key]))
+            f.write("%s,%s\n" % (key, str(age24[key])[1:-1]))
 
 
     with open(os.path.join(output_path, '35-49_oxford.csv'), 'w') as f:
         for key in age49.keys():
-            f.write("%s,%s\n" % (key, age24[key]))
+            f.write("%s,%s\n" % (key, str(age24[key])[1:-1]))
 
 
     with open(os.path.join(output_path, '50-xx_oxford.csv'), 'w') as f:
         for key in age50.keys():
-            f.write("%s,%s\n" % (key, age24[key]))
+            f.write("%s,%s\n" % (key, str(age24[key])[1:-1]))
 
 
     # visualize_comparison(female_beards, female_mustaches, male_beards, male_mustaches, output_path)
@@ -94,10 +85,11 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
 
     parser.add_argument('-i', help="path to the input data", type=str,
-                        default='data/Train/')
+                        default='../data/Train/')
                         # default='/home/mila/teaching/user06/Train/')
     parser.add_argument('-o', help="path to the output data", type=str,
-                        default='/home/mila/teaching/user06/submissions/IFT6758/results/visualization')
+                        default='../data/visualization')
+                        # default='/home/mila/teaching/user06/submissions/IFT6758/results/visualization')
     args = parser.parse_args()
 
     print('input path:', args.i)

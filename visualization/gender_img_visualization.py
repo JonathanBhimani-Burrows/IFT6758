@@ -10,10 +10,12 @@ from sklearn.preprocessing import scale
 from sklearn.model_selection import KFold
 import argparse
 import os
-import Baseline
 import pandas as pd
 from utils.xml_maker import make_xml
 import pdb
+import sys
+sys.path.insert(1, 'C:\\Users\\fanny\\Documents\\IFT6758')
+import Baseline
 import utils.dataloader
 
 
@@ -74,10 +76,11 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
 
     parser.add_argument('-i', help="path to the input data", type=str,
-                        default='data/Train/')
+                        default='../data/Train/')
                         # default='/home/mila/teaching/user06/Train/')
     parser.add_argument('-o', help="path to the output data", type=str,
-                        default='/home/mila/teaching/user06/submissions/IFT6758/results/visualization')
+                        default='/data/visualization')
+                        # default='/home/mila/teaching/user06/submissions/IFT6758/results/visualization')
     args = parser.parse_args()
 
     print('input path:', args.i)

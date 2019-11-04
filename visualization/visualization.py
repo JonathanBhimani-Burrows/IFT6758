@@ -1,6 +1,11 @@
 import matplotlib.pyplot as plt
 import argparse
 import os
+import utils.dataloader
+
+
+import sys
+sys.path.insert(1, 'C:\\Users\\fanny\\Documents\\IFT6758')
 import Baseline
 import utils.dataloader
 
