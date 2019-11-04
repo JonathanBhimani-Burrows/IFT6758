@@ -16,4 +16,4 @@ def simple_gender_predictor(uid, image_data):
     
     else:
         # Predict baseline
-        return 2
+        return -1
