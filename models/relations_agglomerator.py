@@ -49,7 +49,7 @@ class relations_agglomerator():
 
         if liked_page_data['age'].isnull().all() == False:
             prediction = [liked_page_data['age'].value_counts().idxmax(),
-                          liked_page_data['gender'].value_counts().idxmax(),
+                          int(liked_page_data['gender'].value_counts().idxmax()),
                           liked_page_data['ope'].mean(),
                           liked_page_data['con'].mean(),
                           liked_page_data['ext'].mean(),
