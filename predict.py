@@ -10,16 +10,10 @@ from models.relations_agglomerator import relations_agglomerator
 from utils.save_model import load_model
 
 def predict():
-
-    profile_filename = 'Profile/Profile.csv'
-
-    profile_path = os.path.join(args.i, profile_filename)
     output_path = args.o
     if not os.path.exists(output_path):
         print('create output_path:', output_path)
         os.makedirs(output_path)
-
-    # Baseline.eval(path=profile_path)
 
     baseline_data_path = '/home/mila/teaching/user06/submissions/IFT6758/data/Baseline_data.csv'
 
@@ -29,7 +23,9 @@ def predict():
 
     userids = profile_data['userid'].values
 
-    agglo_model = load_model("models/relation_agglo.mdl")    
+    agglo_model = load_model("models/relation_agglo.mdl")
+
+    i = 0
 
     for uid in userids:
         # Predict everything based on relation agglomeration
@@ -53,6 +49,10 @@ def predict():
 
         make_xml(save_dir=output_path, uid=uid, age_group=prediction[0], gender=prediction[1], extrovert=prediction[2],
                  neurotic=prediction[3], agreeable=prediction[4], conscientious=prediction[5], _open=prediction[6])
+
+        i += 1
+        if i % 100 == 0:
+            print("Completed predictions for %5.0f users." % i)
     print('end')
 
 if __name__ == '__main__':
