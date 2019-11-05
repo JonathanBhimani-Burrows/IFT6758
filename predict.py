@@ -23,7 +23,7 @@ def predict():
 
     userids = profile_data['userid'].values
 
-    agglo_model = load_model("models/relation_agglo.mdl")
+    agglo_model = load_model("/home/mila/teaching/user06/submissions/IFT6758/models/relation_agglo.mdl")
 
     i = 0
 
