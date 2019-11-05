@@ -22,7 +22,7 @@ def load_csv(datapath, dirname, filename):
         print("Couldn't find dir: %s" %(data_dirpath))
         return None
 
-def load_data(datapath):
+def load_data(datapath, train=False):
     """
     Function to load all csv files
     Input:  Path to Main Data dir
@@ -35,8 +35,9 @@ def load_data(datapath):
     profile_data = load_csv(datapath, 'Profile', 'Profile.csv')
     image_data = load_csv(datapath, 'Image', 'oxford.csv')
 
-    age_bins = [0, 24, 34, 49, 1000]
-    profile_data = clean_profile_data(profile_data, age_bins)
+    if train is True:
+        age_bins = [0, 24, 34, 49, 1000]
+        profile_data = clean_profile_data(profile_data, age_bins)
     
     relation_data = clean_relation_data(relation_data)
             

@@ -4,7 +4,7 @@ from models.relations_agglomerator import relations_agglomerator
 from utils.save_model import save_model
 
 def train():
-    _, _, relation_data, profile_data, _ = utils.dataloader.load_data(args.i)
+    _, _, relation_data, profile_data, _ = utils.dataloader.load_data(args.i, train=True)
 
     agglo = relations_agglomerator()
 
