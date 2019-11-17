@@ -24,28 +24,41 @@ def predict():
     userids = profile_data['userid'].values
 
     agglo_model = load_model("/home/mila/teaching/user06/submissions/IFT6758/models/relation_agglo.mdl")
-
+    
     i = 0
 
     for uid in userids:
-        # Predict everything based on relation agglomeration
-        prediction = agglo_model.predict(relation_data, uid)
+        # Predict baseline
+        prediction = [baseline_data['age'][0],
+                        int(baseline_data['gender'][0]),
+                        baseline_data['ext'][0],
+                        baseline_data['neu'][0],
+                        baseline_data['agr'][0],
+                        baseline_data['con'][0],
+                        baseline_data['ope'][0]]
 
-        if prediction == -1:
-            # Predict baseline
-            prediction = [baseline_data['age'][0],
-                          int(baseline_data['gender'][0]),
-                          baseline_data['ext'][0],
-                          baseline_data['neu'][0],
-                          baseline_data['agr'][0],
-                          baseline_data['con'][0],
-                          baseline_data['ope'][0]]
+        # Predict age and gender based on relation agglomeration
+        agglo_age_prediction, agglo_gender_prediction = agglo_model.predict(relation_data, uid)
 
         # Predict gender based on facial hair
-        gender_pred = simple_gender_predictor(uid, image_data)
+        facial_gender_prediction = simple_gender_predictor(uid, image_data)
 
-        if gender_pred != -1:
-            prediction[1] = int(gender_pred)
+        # Predict Psych
+        # TO DO
+
+        # Replace Age Baseline
+        if agglo_age_prediction != -1:
+            prediction[0] = agglo_age_prediction
+
+        # Replace Gender Baseline
+        if facial_gender_prediction != -1:
+            prediction[1] = int(facial_gender_prediction)
+        
+        elif agglo_gender_prediction != -1:
+            prediction[1] = int(agglo_gender_prediction)
+
+        # Replace Psych Baseline
+        # TO DO
 
         make_xml(save_dir=output_path, uid=uid, age_group=prediction[0], gender=prediction[1], extrovert=prediction[2],
                  neurotic=prediction[3], agreeable=prediction[4], conscientious=prediction[5], _open=prediction[6])
@@ -56,12 +69,15 @@ def predict():
     print('end')
 
 if __name__ == '__main__':
+    DEFAULT_INPUT = "/home/mila/teaching/user06/Public_Test/"
+    DEFAULT_OUTPUT = "/home/mila/teaching/user06/submissions/IFT6758/results/"
+
     parser = argparse.ArgumentParser()
 
     parser.add_argument('-i', help="path to the input data", type=str,
-                        default='/home/mila/teaching/user06/Public_Test/')
+                        default=DEFAULT_INPUT)
     parser.add_argument('-o', help="path to the output data", type=str,
-                        default='/home/mila/teaching/user06/submissions/IFT6758/results/')
+                        default=DEFAULT_OUTPUT)
     args = parser.parse_args()
 
     print('input path:', args.i)
