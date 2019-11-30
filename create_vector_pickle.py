@@ -1,6 +1,7 @@
 import pandas as pd
 import numpy as np
 import os
+import pdb
 
 def load_csv(datapath, dirname, filename):
     data_dirpath = os.path.join(datapath, dirname)
@@ -58,28 +59,29 @@ if __name__ == '__main__':
 
     print(df.columns)
 
-    len_df = len(df)
-    print(int(len_df / 100))
-    for user in df['userId']:
-        placement = df['userId'] == user
+    for user in df['userid']:
+        placement = df.index[df['userid'] == user][0]
 
         vec = []
         for col in df_liwc.columns[1:]:
-            vec.append(df_liwc[col].loc[df_liwc['userId'] == user])
+            vec.append(df_liwc[col].loc[df_liwc['userId'] == user].values[0])
         df['liwc'].loc[placement] = vec
 
         vec = []
         for col in df_nrc.columns[1:]:
-            vec.append(df_nrc[col].loc[df_nrc['userId'] == user])
+            vec.append(df_nrc[col].loc[df_nrc['userId'] == user].values[0])
         df['nrc'].loc[placement] = vec
 
         vec = []
         for col in df_image.columns[1:]:
-            vec.append(df_image[col].loc[df_image['userId'] == user])
+            vec.append(df_image[col].loc[df_image['userId'] == user].values[0])
         df['oxford'].loc[placement] = vec
 
         df['liwc_nrc'].loc[placement] = df['liwc'].loc[placement] + df['nrc'].loc[placement]
 
+    print(len(df['nrc'].loc[0]))
+    print(len(df['liwc'].loc[0]))
+    print(len(df['liwc_nrc'].loc[0]))
     if not os.path.exists('data/'):
         os.mkdir('data/')
     df.to_pickle('data/df_vector.pkl')
