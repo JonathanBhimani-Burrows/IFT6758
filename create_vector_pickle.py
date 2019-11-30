@@ -40,7 +40,7 @@ def load_data(datapath):
 
 if __name__ == '__main__':
 
-    data = load_data('drive/My Drive/DataScience/projet/Train')
+    data = load_data('data/Train')
 
     df_nrc = data[0].iloc[:, :]
     df_liwc = data[1].iloc[:, :]
