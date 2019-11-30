@@ -1,33 +1,6 @@
-import pdb
-import matplotlib.pyplot as plt
 import pandas as pd
-import spacy
-import time
-import csv
-import json
-from tqdm import tqdm
 import numpy as np
-from numpy.polynomial.polynomial import polyfit
-import matplotlib.pyplot as plt
-import seaborn as sns
-import scipy
 import os
-
-
-from sklearn import metrics
-from sklearn.cluster import KMeans
-from sklearn.datasets import load_digits
-from sklearn.decomposition import PCA
-from sklearn.preprocessing import scale
-from sklearn.model_selection import KFold
-from sklearn import preprocessing
-from sklearn.naive_bayes import GaussianNB
-from sklearn.svm import SVC
-from sklearn.linear_model import LogisticRegression
-from sklearn.metrics import mean_squared_error
-
-from math import sqrt
-
 
 def load_csv(datapath, dirname, filename):
     data_dirpath = os.path.join(datapath, dirname)
