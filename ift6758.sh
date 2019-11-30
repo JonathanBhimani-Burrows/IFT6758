@@ -2,4 +2,4 @@
 
 # week 5
 
-python "main.py" "$@"
+python "predict.py" "$@"
