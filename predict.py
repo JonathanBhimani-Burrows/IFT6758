@@ -8,6 +8,16 @@ import utils.dataloader
 from predictors.gender_predictor import simple_gender_predictor
 from models.relations_agglomerator import relations_agglomerator
 from utils.save_model import load_model
+import pickle
+
+
+def get_predictions(filename, X_test):
+    # load the model from disk
+
+    loaded_model = pickle.load(open(filename, 'rb'))
+    predictions = loaded_model.score(X_test)
+
+    return predictions
 
 def predict():
     output_path = args.o
@@ -67,6 +77,8 @@ def predict():
         if i % 100 == 0:
             print("Completed predictions for %5.0f users." % i)
     print('end')
+
+
 
 if __name__ == '__main__':
     DEFAULT_INPUT = "/home/mila/teaching/user06/Public_Test/"
