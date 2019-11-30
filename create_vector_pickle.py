@@ -41,7 +41,7 @@ def load_data(datapath):
 
 if __name__ == '__main__':
 
-    data = load_data('data/Train')
+    data = load_data('/home/mila/teaching/user06/Public_Test/Train')
 
     df_nrc = data[0].iloc[:, :]
     df_liwc = data[1].iloc[:, :]
