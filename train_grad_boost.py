@@ -27,29 +27,36 @@ def train_baseline(train, test, label, pred):
 
 
 
-def train_gbr(train, test, preprocess, label, criterion, min_split, lr, n_est):
-  # lab_enc = preprocessing.LabelEncoder()
-
-  train_x = train[preprocess].tolist()
-  train_y = train[label].tolist()
-  test_x = test[preprocess].tolist()
-  text_y = test[label].tolist()
-  #pdb.set_trace()
+def train_gbr_final(df, preprocess, label, criterion, min_split, lr, n_est):
+  train_x = df[preprocess].tolist()
+  train_y = df[label].tolist()
 
   params = {'n_estimators': n_est, 'max_depth': 4, 'min_samples_split': min_split,
             'learning_rate': lr, 'loss': 'ls', 'criterion': criterion}
 
   clf = GradientBoostingRegressor(**params)
   clf.fit(train_x, train_y)
-  #accuracy = clf.score(test_x, text_y_encoded)
-  #print('Accuracy GradientBoosting -', label, ':', accuracy)
+
+  return clf
+
+
+def train_gbr(train, test, preprocess, label, criterion, min_split, lr, n_est):
+
+  train_x = train[preprocess].tolist()
+  train_y = train[label].tolist()
+  test_x = test[preprocess].tolist()
+  text_y = test[label].tolist()
+
+  params = {'n_estimators': n_est, 'max_depth': 4, 'min_samples_split': min_split,
+            'learning_rate': lr, 'loss': 'ls', 'criterion': criterion}
+
+  clf = GradientBoostingRegressor(**params)
+  clf.fit(train_x, train_y)
+
   predictions = clf.predict(test_x)
-  #pdb.set_trace()
-  #predictions = lab_enc.inverse_transform(predictions_encoded)
   rmse = sqrt(mean_squared_error(text_y, predictions))
 
   return rmse, clf
-
 
 
 if __name__ == '__main__':
@@ -103,7 +110,9 @@ if __name__ == '__main__':
                                 if best < base_rmse:
                                     print('WIN!!!')
                                     # pickle.dump(model, open(label + '_model.pkl', 'wb'))
-                                    pickle.dump(model,
+                                    model_final = train_gbr_final(df, vector, label, criterion, min_split, lr, n_est)
+
+                                    pickle.dump(model_final,
                                                 open('models/' + label + '_model.pkl',
                                                      'wb'))
 
