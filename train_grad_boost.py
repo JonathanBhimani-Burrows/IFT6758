@@ -98,9 +98,12 @@ if __name__ == '__main__':
             for min_split in [2, 4, 8, 16, 32]:
                 for criterion in ['friedman_mse']:  # , 'mae', 'mse']:
                     for lr in [0.5, 0.1, 0.05, 0.01, 0.005, 0.001, 0.0001]:
+                        lr_array = []
                         for n_est in [8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096]:
+                            if len(lr_array) > 2:
+                                if lr_array[-1] > lr_array[-2] and lr_array[2] > lr_array[3]:
+                                    continue
                             rmse = np.array([])
-                            baseline_rmse = np.array([])
                             for train_index, test_index in kf.split(df):
                                 train = df.iloc[train_index]
                                 test = df.iloc[test_index]
@@ -108,6 +111,7 @@ if __name__ == '__main__':
                                 rmse = np.append(rmse, temp)
 
                             res = rmse.mean()
+                            lr_array.append(res)
                             if res < best:
                                 best = res
                                 if best < base_rmse:
