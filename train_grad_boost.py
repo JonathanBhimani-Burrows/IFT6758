@@ -95,7 +95,7 @@ if __name__ == '__main__':
         base_rmse = baseline_rmse.mean()
 
         for vector in ['merge', 'liwc', 'nrc']:
-            for min_split in [2, 4, 8, 16, 32, 64, 128, 256]:
+            for min_split in [2, 4, 8, 16, 32]:
                 for criterion in ['friedman_mse']:  # , 'mae', 'mse']:
                     for lr in [0.5, 0.1, 0.05, 0.01, 0.005, 0.001, 0.0001]:
                         for n_est in [8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096]:
