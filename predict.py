@@ -1,14 +1,16 @@
 import argparse
 import os
 import Baseline
-import pandas as pd
 from utils.xml_maker import make_xml
 import pdb
 import utils.dataloader
 from predictors.gender_predictor import simple_gender_predictor
-from models.relations_agglomerator import relations_agglomerator
 from utils.save_model import load_model
 import pickle
+
+
+from sklearn.model_selection import KFold
+from sklearn.metrics import mean_squared_error
 
 
 def get_predictions(filename, X_test):
