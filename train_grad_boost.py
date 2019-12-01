@@ -122,14 +122,16 @@ if __name__ == '__main__':
                                     f_model.write(
                                         'RMSE GradientBoosting - vector: ' + vector + ' - criterion: ' + criterion + ' - min_split: ' + str(
                                             min_split) + ' - lr: ' +
-                                        str(lr) + ' - n_est: ' + str(n_est) + ' - ' + label + ' == ' + str(res) + " \n")
+                                        str(lr) + ' - n_est: ' + str(n_est) + ' - ' + label + ' == ' + str(res) + " \r\n")
+                                    f_model.flush()
 
                             print('RMSE GradientBoosting - vector:', vector, '- criterion:', criterion, '- min_split:', min_split, '- lr:',
                                   lr, '- n_est:', n_est, '-', label, '==', res)
                             f.write('RMSE GradientBoosting - vector: ' + vector + ' - criterion: ' + criterion + ' - min_split: ' + str(min_split) + ' - lr: ' +
-                                  str(lr) + ' - n_est: ' + str(n_est) + ' - ' + label + ' == ' + str(res) + " \n")
+                                  str(lr) + ' - n_est: ' + str(n_est) + ' - ' + label + ' == ' + str(res) + " \r\n")
                             print('Baseline:', base_rmse, '- Best:', best, '- Model:', res)
-                            f.write('Baseline: ' + str(base_rmse) + ' - Best: ' + str(best) + ' - Model: ' + str(res) + ' \n')
+                            f.write('Baseline: ' + str(base_rmse) + ' - Best: ' + str(best) + ' - Model: ' + str(res) + ' \r\n')
+                            f.flush()
         all_best.append(best)
         all_baseline.append(base_rmse)
 
@@ -140,11 +142,12 @@ if __name__ == '__main__':
             print('Best:', all_best[cpt])
             print('\n')
 
-            f.write('\n')
-            f.write(labels[cpt] + ' \n')
-            f.write('Baseline: ' + str(all_baseline[cpt]) + ' \n')
-            f.write('Best: ' + str(all_best[cpt]) + ' \n')
-            f.write('\n')
+            f.write('\r\n')
+            f.write(labels[cpt] + ' \r\n')
+            f.write('Baseline: ' + str(all_baseline[cpt]) + ' \r\n')
+            f.write('Best: ' + str(all_best[cpt]) + ' \r\n')
+            f.write('\r\n')
 
         print('\n')
-        f.write('\n')
+        f.write('\r\n')
+        f.flush()
