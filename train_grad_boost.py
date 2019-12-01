@@ -101,7 +101,7 @@ if __name__ == '__main__':
                         lr_array = []
                         for n_est in [8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096]:
                             if len(lr_array) > 2:
-                                if lr_array[-1] > lr_array[-2] and lr_array[2] > lr_array[3]:
+                                if lr_array[-1] > lr_array[-2] and lr_array[-2] > lr_array[-3]:
                                     continue
                             rmse = np.array([])
                             for train_index, test_index in kf.split(df):
