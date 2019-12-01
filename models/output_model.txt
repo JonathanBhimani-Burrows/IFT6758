@@ -1,7 +1,2 @@
-RMSE GradientBoosting - vector: merge - criterion: friedman_mse - min_split: 2 - lr: 0.5 - n_est: 8 - ope == 0.6277206856024613 
-RMSE GradientBoosting - vector: merge - criterion: friedman_mse - min_split: 2 - lr: 0.1 - n_est: 8 - ope == 0.6242808143846852 
-RMSE GradientBoosting - vector: merge - criterion: friedman_mse - min_split: 2 - lr: 0.1 - n_est: 16 - ope == 0.6221371903328257 
-RMSE GradientBoosting - vector: merge - criterion: friedman_mse - min_split: 2 - lr: 0.1 - n_est: 32 - ope == 0.6208847494243462 
-RMSE GradientBoosting - vector: merge - criterion: friedman_mse - min_split: 2 - lr: 0.05 - n_est: 64 - ope == 0.6192847825411534 
-RMSE GradientBoosting - vector: merge - criterion: friedman_mse - min_split: 2 - lr: 0.005 - n_est: 1024 - ope == 0.619109377443485 
-RMSE GradientBoosting - vector: merge - criterion: friedman_mse - min_split: 2 - lr: 0.001 - n_est: 4096 - ope == 0.618542557575032 
+RMSE GradientBoosting - vector: merge - criterion: friedman_mse - min_split: 2 - lr: 0.001 - n_est: 4096 - ope == 0.618542557575032
+Baseline: 0.6314540497743321 - Best: 0.618542557575032 
