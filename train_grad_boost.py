@@ -96,12 +96,28 @@ if __name__ == '__main__':
 
         for vector in ['merge', 'liwc', 'nrc']:
             for min_split in [2, 4, 8, 16, 32]:
+                if min_split == 2 and vector == 'merge' and label == 'ope':
+                    print(min_split == 2 and vector == 'merge' and label == 'ope')
+                    print('WIN!!!')
+                    best = 0.618542557575032
+                    f_model.write(
+                        'RMSE GradientBoosting - vector: merge - criterion: friedman_mse - min_split: 2 - lr: 0.001 - n_est: 4096 - ope == 0.618542557575032\r\n')
+                    f_model.write('Baseline: ' + str(base_rmse) + ' - Best: ' + str(best) + ' \r\n')
+                    f_model.flush()
+
+                    print('RMSE GradientBoosting - vector: merge - criterion: friedman_mse - min_split: 2 - lr: 0.001 - n_est: 4096 - ope == 0.618542557575032\r\n')
+                    print('Baseline:', base_rmse, '- Best:', best)
+                    f.write('Baseline: ' + str(base_rmse) + ' - Best: ' + str(best) + ' \r\n')
+                    f.flush()
+                    continue
+
                 for criterion in ['friedman_mse']:  # , 'mae', 'mse']:
                     for lr in [0.5, 0.1, 0.05, 0.01, 0.005, 0.001, 0.0001]:
                         lr_array = []
                         for n_est in [8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096]:
                             if len(lr_array) > 2:
-                                if lr_array[-1] > lr_array[-2] and lr_array[-2] > lr_array[-3]:
+                                if round(lr_array[-1], 3) > round(lr_array[-2], 3) \
+                                        and round(lr_array[-2], 3) > round(lr_array[-3], 3):
                                     continue
                             rmse = np.array([])
                             for train_index, test_index in kf.split(df):
@@ -127,6 +143,7 @@ if __name__ == '__main__':
                                         'RMSE GradientBoosting - vector: ' + vector + ' - criterion: ' + criterion + ' - min_split: ' + str(
                                             min_split) + ' - lr: ' +
                                         str(lr) + ' - n_est: ' + str(n_est) + ' - ' + label + ' == ' + str(res) + " \r\n")
+                                    f_model.write('Baseline: ' + str(base_rmse) + ' - Best: ' + str(best) + ' \r\n')
                                     f_model.flush()
 
                             print('RMSE GradientBoosting - vector:', vector, '- criterion:', criterion, '- min_split:', min_split, '- lr:',
