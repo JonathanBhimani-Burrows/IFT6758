@@ -71,6 +71,9 @@ if __name__ == '__main__':
 
     f = open("results/output.txt", "w+")
 
+
+    f_model = open("models/output_model.txt", "w+")
+
     baseline = [3.9086905263157825, 3.445616842105264, 3.486857894736829, 3.5839042105263155, 2.7324242105263203]
     labels = ['ope', 'con', 'ext', 'agr', 'neu']
 
@@ -115,6 +118,11 @@ if __name__ == '__main__':
                                     pickle.dump(model_final,
                                                 open('models/' + label + '_model.pkl',
                                                      'wb'))
+
+                                    f_model.write(
+                                        'RMSE GradientBoosting - vector: ' + vector + ' - criterion: ' + criterion + ' - min_split: ' + str(
+                                            min_split) + ' - lr: ' +
+                                        str(lr) + ' - n_est: ' + str(n_est) + ' - ' + label + ' == ' + str(res) + " \n")
 
                             print('RMSE GradientBoosting - vector:', vector, '- criterion:', criterion, '- min_split:', min_split, '- lr:',
                                   lr, '- n_est:', n_est, '-', label, '==', res)
