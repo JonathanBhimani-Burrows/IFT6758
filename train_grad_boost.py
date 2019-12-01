@@ -97,7 +97,7 @@ if __name__ == '__main__':
                         for n_est in [8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096]:
                             rmse = np.array([])
                             baseline_rmse = np.array([])
-                            kf = KFold(n_splits=5, shuffle=True)
+                            kf = KFold(n_splits=10, shuffle=True)
                             for train_index, test_index in kf.split(df):
                                 train = df.iloc[train_index]
                                 test = df.iloc[test_index]
