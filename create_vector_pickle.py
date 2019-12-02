@@ -65,7 +65,10 @@ def create_merge_df(df_nrc, df_liwc, df_relation, df_profile, df_image):
 
         vec = []
         for col in df_image.columns[1:]:
-            vec.append(df_image[col].loc[df_image['userId'] == user].values[0])
+            asd = df_image['userId'] == user
+            qwe = df_image[col].loc[asd]
+            zxc = qwe.values[0]
+            vec.append(zxc)
         df['oxford'].loc[placement] = vec
 
         df['liwc_nrc'].loc[placement] = df['liwc'].loc[placement] + df['nrc'].loc[placement]
