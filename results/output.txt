@@ -1,249 +1,132 @@
-RMSE GradientBoosting - vector: merge - criterion: friedman_mse - min_split: 2 - lr: 0.5 - n_est: 8 - neu == 0.7946633077553714 
-Baseline: 1.4186468600852602 - Best: 0.7946633077553714 - Model: 0.7946633077553714 
-RMSE GradientBoosting - vector: merge - criterion: friedman_mse - min_split: 2 - lr: 0.5 - n_est: 16 - neu == 0.8091397923096728 
-Baseline: 1.4186468600852602 - Best: 0.7946633077553714 - Model: 0.8091397923096728 
-RMSE GradientBoosting - vector: merge - criterion: friedman_mse - min_split: 2 - lr: 0.5 - n_est: 32 - neu == 0.8201570933798727 
-Baseline: 1.4186468600852602 - Best: 0.7946633077553714 - Model: 0.8201570933798727 
-RMSE GradientBoosting - vector: merge - criterion: friedman_mse - min_split: 2 - lr: 0.1 - n_est: 8 - neu == 0.7892556277250727 
-Baseline: 1.4186468600852602 - Best: 0.7892556277250727 - Model: 0.7892556277250727 
-RMSE GradientBoosting - vector: merge - criterion: friedman_mse - min_split: 2 - lr: 0.1 - n_est: 16 - neu == 0.7880374500282413 
-Baseline: 1.4186468600852602 - Best: 0.7880374500282413 - Model: 0.7880374500282413 
-RMSE GradientBoosting - vector: merge - criterion: friedman_mse - min_split: 2 - lr: 0.1 - n_est: 32 - neu == 0.7879339610586323 
-Baseline: 1.4186468600852602 - Best: 0.7879339610586323 - Model: 0.7879339610586323 
-RMSE GradientBoosting - vector: merge - criterion: friedman_mse - min_split: 2 - lr: 0.1 - n_est: 64 - neu == 0.7906614675696362 
-Baseline: 1.4186468600852602 - Best: 0.7879339610586323 - Model: 0.7906614675696362 
-RMSE GradientBoosting - vector: merge - criterion: friedman_mse - min_split: 2 - lr: 0.1 - n_est: 128 - neu == 0.7955064491582531 
-Baseline: 1.4186468600852602 - Best: 0.7879339610586323 - Model: 0.7955064491582531 
-RMSE GradientBoosting - vector: merge - criterion: friedman_mse - min_split: 2 - lr: 0.05 - n_est: 8 - neu == 0.7897027043962479 
-Baseline: 1.4186468600852602 - Best: 0.7879339610586323 - Model: 0.7897027043962479 
-RMSE GradientBoosting - vector: merge - criterion: friedman_mse - min_split: 2 - lr: 0.05 - n_est: 16 - neu == 0.7885937045155295 
-Baseline: 1.4186468600852602 - Best: 0.7879339610586323 - Model: 0.7885937045155295 
-RMSE GradientBoosting - vector: merge - criterion: friedman_mse - min_split: 2 - lr: 0.05 - n_est: 32 - neu == 0.7872551943380532 
-Baseline: 1.4186468600852602 - Best: 0.7872551943380532 - Model: 0.7872551943380532 
-RMSE GradientBoosting - vector: merge - criterion: friedman_mse - min_split: 2 - lr: 0.05 - n_est: 64 - neu == 0.7871806188817865 
-Baseline: 1.4186468600852602 - Best: 0.7871806188817865 - Model: 0.7871806188817865 
-RMSE GradientBoosting - vector: merge - criterion: friedman_mse - min_split: 2 - lr: 0.05 - n_est: 128 - neu == 0.7883319846192128 
-Baseline: 1.4186468600852602 - Best: 0.7871806188817865 - Model: 0.7883319846192128 
-RMSE GradientBoosting - vector: merge - criterion: friedman_mse - min_split: 2 - lr: 0.05 - n_est: 256 - neu == 0.7933599068896917 
-Baseline: 1.4186468600852602 - Best: 0.7871806188817865 - Model: 0.7933599068896917 
-RMSE GradientBoosting - vector: merge - criterion: friedman_mse - min_split: 2 - lr: 0.01 - n_est: 8 - neu == 0.7922456687462869 
-Baseline: 1.4186468600852602 - Best: 0.7871806188817865 - Model: 0.7922456687462869 
-RMSE GradientBoosting - vector: merge - criterion: friedman_mse - min_split: 2 - lr: 0.01 - n_est: 16 - neu == 0.7917098967994607 
-Baseline: 1.4186468600852602 - Best: 0.7871806188817865 - Model: 0.7917098967994607 
-RMSE GradientBoosting - vector: merge - criterion: friedman_mse - min_split: 2 - lr: 0.01 - n_est: 32 - neu == 0.7901019824252838 
-Baseline: 1.4186468600852602 - Best: 0.7871806188817865 - Model: 0.7901019824252838 
-RMSE GradientBoosting - vector: merge - criterion: friedman_mse - min_split: 2 - lr: 0.01 - n_est: 64 - neu == 0.7887200780373369 
-Baseline: 1.4186468600852602 - Best: 0.7871806188817865 - Model: 0.7887200780373369 
-RMSE GradientBoosting - vector: merge - criterion: friedman_mse - min_split: 2 - lr: 0.01 - n_est: 128 - neu == 0.7875211043405386 
-Baseline: 1.4186468600852602 - Best: 0.7871806188817865 - Model: 0.7875211043405386 
-RMSE GradientBoosting - vector: merge - criterion: friedman_mse - min_split: 2 - lr: 0.01 - n_est: 256 - neu == 0.7871682640161703 
-Baseline: 1.4186468600852602 - Best: 0.7871682640161703 - Model: 0.7871682640161703 
-RMSE GradientBoosting - vector: merge - criterion: friedman_mse - min_split: 2 - lr: 0.01 - n_est: 512 - neu == 0.7881561716782103 
-Baseline: 1.4186468600852602 - Best: 0.7871682640161703 - Model: 0.7881561716782103 
-RMSE GradientBoosting - vector: merge - criterion: friedman_mse - min_split: 2 - lr: 0.01 - n_est: 1024 - neu == 0.7907234973644419 
-Baseline: 1.4186468600852602 - Best: 0.7871682640161703 - Model: 0.7907234973644419 
-RMSE GradientBoosting - vector: merge - criterion: friedman_mse - min_split: 2 - lr: 0.005 - n_est: 8 - neu == 0.7925668868354183 
-Baseline: 1.4186468600852602 - Best: 0.7871682640161703 - Model: 0.7925668868354183 
-RMSE GradientBoosting - vector: merge - criterion: friedman_mse - min_split: 2 - lr: 0.005 - n_est: 16 - neu == 0.7923020065805869 
-Baseline: 1.4186468600852602 - Best: 0.7871682640161703 - Model: 0.7923020065805869 
-RMSE GradientBoosting - vector: merge - criterion: friedman_mse - min_split: 2 - lr: 0.005 - n_est: 32 - neu == 0.7916763436759983 
-Baseline: 1.4186468600852602 - Best: 0.7871682640161703 - Model: 0.7916763436759983 
-RMSE GradientBoosting - vector: merge - criterion: friedman_mse - min_split: 2 - lr: 0.005 - n_est: 64 - neu == 0.790844703777702 
-Baseline: 1.4186468600852602 - Best: 0.7871682640161703 - Model: 0.790844703777702 
-RMSE GradientBoosting - vector: merge - criterion: friedman_mse - min_split: 2 - lr: 0.005 - n_est: 128 - neu == 0.7888317416274522 
-Baseline: 1.4186468600852602 - Best: 0.7871682640161703 - Model: 0.7888317416274522 
-RMSE GradientBoosting - vector: merge - criterion: friedman_mse - min_split: 2 - lr: 0.005 - n_est: 256 - neu == 0.7878064443301779 
-Baseline: 1.4186468600852602 - Best: 0.7871682640161703 - Model: 0.7878064443301779 
-RMSE GradientBoosting - vector: merge - criterion: friedman_mse - min_split: 2 - lr: 0.005 - n_est: 512 - neu == 0.7871644108611353 
-Baseline: 1.4186468600852602 - Best: 0.7871644108611353 - Model: 0.7871644108611353 
-RMSE GradientBoosting - vector: merge - criterion: friedman_mse - min_split: 2 - lr: 0.005 - n_est: 1024 - neu == 0.7872155493245367 
-Baseline: 1.4186468600852602 - Best: 0.7871644108611353 - Model: 0.7872155493245367 
-RMSE GradientBoosting - vector: merge - criterion: friedman_mse - min_split: 2 - lr: 0.005 - n_est: 2048 - neu == 0.7924296069670581 
-Baseline: 1.4186468600852602 - Best: 0.7871644108611353 - Model: 0.7924296069670581 
-RMSE GradientBoosting - vector: merge - criterion: friedman_mse - min_split: 2 - lr: 0.005 - n_est: 4096 - neu == 0.7946369649109057 
-Baseline: 1.4186468600852602 - Best: 0.7871644108611353 - Model: 0.7946369649109057 
-RMSE GradientBoosting - vector: merge - criterion: friedman_mse - min_split: 2 - lr: 0.001 - n_est: 8 - neu == 0.7929511259416009 
-Baseline: 1.4186468600852602 - Best: 0.7871644108611353 - Model: 0.7929511259416009 
-RMSE GradientBoosting - vector: merge - criterion: friedman_mse - min_split: 2 - lr: 0.001 - n_est: 16 - neu == 0.7929669641391135 
-Baseline: 1.4186468600852602 - Best: 0.7871644108611353 - Model: 0.7929669641391135 
-RMSE GradientBoosting - vector: merge - criterion: friedman_mse - min_split: 2 - lr: 0.001 - n_est: 32 - neu == 0.7927806342080214 
-Baseline: 1.4186468600852602 - Best: 0.7871644108611353 - Model: 0.7927806342080214 
-RMSE GradientBoosting - vector: merge - criterion: friedman_mse - min_split: 2 - lr: 0.001 - n_est: 64 - neu == 0.7923629041969746 
-Baseline: 1.4186468600852602 - Best: 0.7871644108611353 - Model: 0.7923629041969746 
-RMSE GradientBoosting - vector: merge - criterion: friedman_mse - min_split: 2 - lr: 0.001 - n_est: 128 - neu == 0.7918507888119249 
-Baseline: 1.4186468600852602 - Best: 0.7871644108611353 - Model: 0.7918507888119249 
-RMSE GradientBoosting - vector: merge - criterion: friedman_mse - min_split: 2 - lr: 0.001 - n_est: 256 - neu == 0.7909145155948619 
-Baseline: 1.4186468600852602 - Best: 0.7871644108611353 - Model: 0.7909145155948619 
-RMSE GradientBoosting - vector: merge - criterion: friedman_mse - min_split: 2 - lr: 0.001 - n_est: 512 - neu == 0.7898683880161503 
-Baseline: 1.4186468600852602 - Best: 0.7871644108611353 - Model: 0.7898683880161503 
-RMSE GradientBoosting - vector: merge - criterion: friedman_mse - min_split: 2 - lr: 0.001 - n_est: 1024 - neu == 0.7887750505187034 
-Baseline: 1.4186468600852602 - Best: 0.7871644108611353 - Model: 0.7887750505187034 
-RMSE GradientBoosting - vector: merge - criterion: friedman_mse - min_split: 2 - lr: 0.001 - n_est: 2048 - neu == 0.7868811302453775 
-Baseline: 1.4186468600852602 - Best: 0.7868811302453775 - Model: 0.7868811302453775 
-RMSE GradientBoosting - vector: merge - criterion: friedman_mse - min_split: 2 - lr: 0.001 - n_est: 4096 - neu == 0.7873608675164677 
-Baseline: 1.4186468600852602 - Best: 0.7868811302453775 - Model: 0.7873608675164677 
-RMSE GradientBoosting - vector: liwc - criterion: friedman_mse - min_split: 2 - lr: 0.5 - n_est: 8 - neu == 0.7973033206553493 
-Baseline: 1.4186468600852602 - Best: 0.7868811302453775 - Model: 0.7973033206553493 
-RMSE GradientBoosting - vector: liwc - criterion: friedman_mse - min_split: 2 - lr: 0.5 - n_est: 16 - neu == 0.8056416461387148 
-Baseline: 1.4186468600852602 - Best: 0.7868811302453775 - Model: 0.8056416461387148 
-RMSE GradientBoosting - vector: liwc - criterion: friedman_mse - min_split: 2 - lr: 0.5 - n_est: 32 - neu == 0.8227364442484273 
-Baseline: 1.4186468600852602 - Best: 0.7868811302453775 - Model: 0.8227364442484273 
-RMSE GradientBoosting - vector: liwc - criterion: friedman_mse - min_split: 2 - lr: 0.1 - n_est: 8 - neu == 0.7896285290091691 
-Baseline: 1.4186468600852602 - Best: 0.7868811302453775 - Model: 0.7896285290091691 
-RMSE GradientBoosting - vector: liwc - criterion: friedman_mse - min_split: 2 - lr: 0.1 - n_est: 16 - neu == 0.7880479225889576 
-Baseline: 1.4186468600852602 - Best: 0.7868811302453775 - Model: 0.7880479225889576 
-RMSE GradientBoosting - vector: liwc - criterion: friedman_mse - min_split: 2 - lr: 0.1 - n_est: 32 - neu == 0.7877847701180225 
-Baseline: 1.4186468600852602 - Best: 0.7868811302453775 - Model: 0.7877847701180225 
-RMSE GradientBoosting - vector: liwc - criterion: friedman_mse - min_split: 2 - lr: 0.1 - n_est: 64 - neu == 0.7905204317076642 
-Baseline: 1.4186468600852602 - Best: 0.7868811302453775 - Model: 0.7905204317076642 
-RMSE GradientBoosting - vector: liwc - criterion: friedman_mse - min_split: 2 - lr: 0.1 - n_est: 128 - neu == 0.793052017098655 
-Baseline: 1.4186468600852602 - Best: 0.7868811302453775 - Model: 0.793052017098655 
-RMSE GradientBoosting - vector: liwc - criterion: friedman_mse - min_split: 2 - lr: 0.05 - n_est: 8 - neu == 0.7904183281678635 
-Baseline: 1.4186468600852602 - Best: 0.7868811302453775 - Model: 0.7904183281678635 
-RMSE GradientBoosting - vector: liwc - criterion: friedman_mse - min_split: 2 - lr: 0.05 - n_est: 16 - neu == 0.7893894966584263 
-Baseline: 1.4186468600852602 - Best: 0.7868811302453775 - Model: 0.7893894966584263 
-RMSE GradientBoosting - vector: liwc - criterion: friedman_mse - min_split: 2 - lr: 0.05 - n_est: 32 - neu == 0.7874925775639536 
-Baseline: 1.4186468600852602 - Best: 0.7868811302453775 - Model: 0.7874925775639536 
-RMSE GradientBoosting - vector: liwc - criterion: friedman_mse - min_split: 2 - lr: 0.05 - n_est: 64 - neu == 0.7883601192943326 
-Baseline: 1.4186468600852602 - Best: 0.7868811302453775 - Model: 0.7883601192943326 
-RMSE GradientBoosting - vector: liwc - criterion: friedman_mse - min_split: 2 - lr: 0.05 - n_est: 128 - neu == 0.7892758042213106 
-Baseline: 1.4186468600852602 - Best: 0.7868811302453775 - Model: 0.7892758042213106 
-RMSE GradientBoosting - vector: liwc - criterion: friedman_mse - min_split: 2 - lr: 0.01 - n_est: 8 - neu == 0.7924371105700109 
-Baseline: 1.4186468600852602 - Best: 0.7868811302453775 - Model: 0.7924371105700109 
-RMSE GradientBoosting - vector: liwc - criterion: friedman_mse - min_split: 2 - lr: 0.01 - n_est: 16 - neu == 0.7919610990406664 
-Baseline: 1.4186468600852602 - Best: 0.7868811302453775 - Model: 0.7919610990406664 
-RMSE GradientBoosting - vector: liwc - criterion: friedman_mse - min_split: 2 - lr: 0.01 - n_est: 32 - neu == 0.7908636672806363 
-Baseline: 1.4186468600852602 - Best: 0.7868811302453775 - Model: 0.7908636672806363 
-RMSE GradientBoosting - vector: liwc - criterion: friedman_mse - min_split: 2 - lr: 0.01 - n_est: 64 - neu == 0.7896139096171542 
-Baseline: 1.4186468600852602 - Best: 0.7868811302453775 - Model: 0.7896139096171542 
-RMSE GradientBoosting - vector: liwc - criterion: friedman_mse - min_split: 2 - lr: 0.01 - n_est: 128 - neu == 0.7883214544266232 
-Baseline: 1.4186468600852602 - Best: 0.7868811302453775 - Model: 0.7883214544266232 
-RMSE GradientBoosting - vector: liwc - criterion: friedman_mse - min_split: 2 - lr: 0.01 - n_est: 256 - neu == 0.7873781959199964 
-Baseline: 1.4186468600852602 - Best: 0.7868811302453775 - Model: 0.7873781959199964 
-RMSE GradientBoosting - vector: liwc - criterion: friedman_mse - min_split: 2 - lr: 0.01 - n_est: 512 - neu == 0.7889144968892408 
-Baseline: 1.4186468600852602 - Best: 0.7868811302453775 - Model: 0.7889144968892408 
-RMSE GradientBoosting - vector: liwc - criterion: friedman_mse - min_split: 2 - lr: 0.01 - n_est: 1024 - neu == 0.7900044284317062 
-Baseline: 1.4186468600852602 - Best: 0.7868811302453775 - Model: 0.7900044284317062 
-RMSE GradientBoosting - vector: liwc - criterion: friedman_mse - min_split: 2 - lr: 0.005 - n_est: 8 - neu == 0.7927079146888224 
-Baseline: 1.4186468600852602 - Best: 0.7868811302453775 - Model: 0.7927079146888224 
-RMSE GradientBoosting - vector: liwc - criterion: friedman_mse - min_split: 2 - lr: 0.005 - n_est: 16 - neu == 0.7926344274687871 
-Baseline: 1.4186468600852602 - Best: 0.7868811302453775 - Model: 0.7926344274687871 
-RMSE GradientBoosting - vector: liwc - criterion: friedman_mse - min_split: 2 - lr: 0.005 - n_est: 32 - neu == 0.7920175366066455 
-Baseline: 1.4186468600852602 - Best: 0.7868811302453775 - Model: 0.7920175366066455 
-RMSE GradientBoosting - vector: liwc - criterion: friedman_mse - min_split: 2 - lr: 0.005 - n_est: 64 - neu == 0.791105671738962 
-Baseline: 1.4186468600852602 - Best: 0.7868811302453775 - Model: 0.791105671738962 
-RMSE GradientBoosting - vector: liwc - criterion: friedman_mse - min_split: 2 - lr: 0.005 - n_est: 128 - neu == 0.7898079460023788 
-Baseline: 1.4186468600852602 - Best: 0.7868811302453775 - Model: 0.7898079460023788 
-RMSE GradientBoosting - vector: liwc - criterion: friedman_mse - min_split: 2 - lr: 0.005 - n_est: 256 - neu == 0.7881627488705604 
-Baseline: 1.4186468600852602 - Best: 0.7868811302453775 - Model: 0.7881627488705604 
-RMSE GradientBoosting - vector: liwc - criterion: friedman_mse - min_split: 2 - lr: 0.005 - n_est: 512 - neu == 0.787085351292642 
-Baseline: 1.4186468600852602 - Best: 0.7868811302453775 - Model: 0.787085351292642 
-RMSE GradientBoosting - vector: liwc - criterion: friedman_mse - min_split: 2 - lr: 0.005 - n_est: 1024 - neu == 0.7880785803036063 
-Baseline: 1.4186468600852602 - Best: 0.7868811302453775 - Model: 0.7880785803036063 
-RMSE GradientBoosting - vector: liwc - criterion: friedman_mse - min_split: 2 - lr: 0.005 - n_est: 2048 - neu == 0.7910476108559636 
-Baseline: 1.4186468600852602 - Best: 0.7868811302453775 - Model: 0.7910476108559636 
-RMSE GradientBoosting - vector: liwc - criterion: friedman_mse - min_split: 2 - lr: 0.001 - n_est: 8 - neu == 0.7931585337787054 
-Baseline: 1.4186468600852602 - Best: 0.7868811302453775 - Model: 0.7931585337787054 
-RMSE GradientBoosting - vector: liwc - criterion: friedman_mse - min_split: 2 - lr: 0.001 - n_est: 16 - neu == 0.7930559130185904 
-Baseline: 1.4186468600852602 - Best: 0.7868811302453775 - Model: 0.7930559130185904 
-RMSE GradientBoosting - vector: liwc - criterion: friedman_mse - min_split: 2 - lr: 0.001 - n_est: 32 - neu == 0.7928009821585812 
-Baseline: 1.4186468600852602 - Best: 0.7868811302453775 - Model: 0.7928009821585812 
-RMSE GradientBoosting - vector: liwc - criterion: friedman_mse - min_split: 2 - lr: 0.001 - n_est: 64 - neu == 0.7926018609444023 
-Baseline: 1.4186468600852602 - Best: 0.7868811302453775 - Model: 0.7926018609444023 
-RMSE GradientBoosting - vector: liwc - criterion: friedman_mse - min_split: 2 - lr: 0.001 - n_est: 128 - neu == 0.7918376352126286 
-Baseline: 1.4186468600852602 - Best: 0.7868811302453775 - Model: 0.7918376352126286 
-RMSE GradientBoosting - vector: liwc - criterion: friedman_mse - min_split: 2 - lr: 0.001 - n_est: 256 - neu == 0.7911646412708957 
-Baseline: 1.4186468600852602 - Best: 0.7868811302453775 - Model: 0.7911646412708957 
-RMSE GradientBoosting - vector: liwc - criterion: friedman_mse - min_split: 2 - lr: 0.001 - n_est: 512 - neu == 0.7904151543125841 
-Baseline: 1.4186468600852602 - Best: 0.7868811302453775 - Model: 0.7904151543125841 
-RMSE GradientBoosting - vector: liwc - criterion: friedman_mse - min_split: 2 - lr: 0.001 - n_est: 1024 - neu == 0.7886974251968248 
-Baseline: 1.4186468600852602 - Best: 0.7868811302453775 - Model: 0.7886974251968248 
-RMSE GradientBoosting - vector: liwc - criterion: friedman_mse - min_split: 2 - lr: 0.001 - n_est: 2048 - neu == 0.7869270256563341 
-Baseline: 1.4186468600852602 - Best: 0.7868811302453775 - Model: 0.7869270256563341 
-RMSE GradientBoosting - vector: liwc - criterion: friedman_mse - min_split: 2 - lr: 0.001 - n_est: 4096 - neu == 0.7883324916081451 
-Baseline: 1.4186468600852602 - Best: 0.7868811302453775 - Model: 0.7883324916081451 
-RMSE GradientBoosting - vector: nrc - criterion: friedman_mse - min_split: 2 - lr: 0.5 - n_est: 8 - neu == 0.7983699748341901 
-Baseline: 1.4186468600852602 - Best: 0.7868811302453775 - Model: 0.7983699748341901 
-RMSE GradientBoosting - vector: nrc - criterion: friedman_mse - min_split: 2 - lr: 0.5 - n_est: 16 - neu == 0.8011239919963169 
-Baseline: 1.4186468600852602 - Best: 0.7868811302453775 - Model: 0.8011239919963169 
-RMSE GradientBoosting - vector: nrc - criterion: friedman_mse - min_split: 2 - lr: 0.5 - n_est: 32 - neu == 0.812913266605735 
-Baseline: 1.4186468600852602 - Best: 0.7868811302453775 - Model: 0.812913266605735 
-RMSE GradientBoosting - vector: nrc - criterion: friedman_mse - min_split: 2 - lr: 0.1 - n_est: 8 - neu == 0.7909956461263249 
-Baseline: 1.4186468600852602 - Best: 0.7868811302453775 - Model: 0.7909956461263249 
-RMSE GradientBoosting - vector: nrc - criterion: friedman_mse - min_split: 2 - lr: 0.1 - n_est: 16 - neu == 0.7912301139481068 
-Baseline: 1.4186468600852602 - Best: 0.7868811302453775 - Model: 0.7912301139481068 
-RMSE GradientBoosting - vector: nrc - criterion: friedman_mse - min_split: 2 - lr: 0.1 - n_est: 32 - neu == 0.7910574922737469 
-Baseline: 1.4186468600852602 - Best: 0.7868811302453775 - Model: 0.7910574922737469 
-RMSE GradientBoosting - vector: nrc - criterion: friedman_mse - min_split: 2 - lr: 0.1 - n_est: 64 - neu == 0.7941129256994737 
-Baseline: 1.4186468600852602 - Best: 0.7868811302453775 - Model: 0.7941129256994737 
-RMSE GradientBoosting - vector: nrc - criterion: friedman_mse - min_split: 2 - lr: 0.1 - n_est: 128 - neu == 0.7978040819635588 
-Baseline: 1.4186468600852602 - Best: 0.7868811302453775 - Model: 0.7978040819635588 
-RMSE GradientBoosting - vector: nrc - criterion: friedman_mse - min_split: 2 - lr: 0.05 - n_est: 8 - neu == 0.7913857464720453 
-Baseline: 1.4186468600852602 - Best: 0.7868811302453775 - Model: 0.7913857464720453 
-RMSE GradientBoosting - vector: nrc - criterion: friedman_mse - min_split: 2 - lr: 0.05 - n_est: 16 - neu == 0.790905139140213 
-Baseline: 1.4186468600852602 - Best: 0.7868811302453775 - Model: 0.790905139140213 
-RMSE GradientBoosting - vector: nrc - criterion: friedman_mse - min_split: 2 - lr: 0.05 - n_est: 32 - neu == 0.7907458293225484 
-Baseline: 1.4186468600852602 - Best: 0.7868811302453775 - Model: 0.7907458293225484 
-RMSE GradientBoosting - vector: nrc - criterion: friedman_mse - min_split: 2 - lr: 0.05 - n_est: 64 - neu == 0.7917688829776859 
-Baseline: 1.4186468600852602 - Best: 0.7868811302453775 - Model: 0.7917688829776859 
-RMSE GradientBoosting - vector: nrc - criterion: friedman_mse - min_split: 2 - lr: 0.05 - n_est: 128 - neu == 0.7953633054786798 
-Baseline: 1.4186468600852602 - Best: 0.7868811302453775 - Model: 0.7953633054786798 
-RMSE GradientBoosting - vector: nrc - criterion: friedman_mse - min_split: 2 - lr: 0.01 - n_est: 8 - neu == 0.7925812601636639 
-Baseline: 1.4186468600852602 - Best: 0.7868811302453775 - Model: 0.7925812601636639 
-RMSE GradientBoosting - vector: nrc - criterion: friedman_mse - min_split: 2 - lr: 0.01 - n_est: 16 - neu == 0.7919648722862126 
-Baseline: 1.4186468600852602 - Best: 0.7868811302453775 - Model: 0.7919648722862126 
-RMSE GradientBoosting - vector: nrc - criterion: friedman_mse - min_split: 2 - lr: 0.01 - n_est: 32 - neu == 0.7915122544297727 
-Baseline: 1.4186468600852602 - Best: 0.7868811302453775 - Model: 0.7915122544297727 
-RMSE GradientBoosting - vector: nrc - criterion: friedman_mse - min_split: 2 - lr: 0.01 - n_est: 64 - neu == 0.7911255236889848 
-Baseline: 1.4186468600852602 - Best: 0.7868811302453775 - Model: 0.7911255236889848 
-RMSE GradientBoosting - vector: nrc - criterion: friedman_mse - min_split: 2 - lr: 0.01 - n_est: 128 - neu == 0.7909361754761497 
-Baseline: 1.4186468600852602 - Best: 0.7868811302453775 - Model: 0.7909361754761497 
-RMSE GradientBoosting - vector: nrc - criterion: friedman_mse - min_split: 2 - lr: 0.01 - n_est: 256 - neu == 0.7905747336645306 
-Baseline: 1.4186468600852602 - Best: 0.7868811302453775 - Model: 0.7905747336645306 
-RMSE GradientBoosting - vector: nrc - criterion: friedman_mse - min_split: 2 - lr: 0.01 - n_est: 512 - neu == 0.7924826682914985 
-Baseline: 1.4186468600852602 - Best: 0.7868811302453775 - Model: 0.7924826682914985 
-RMSE GradientBoosting - vector: nrc - criterion: friedman_mse - min_split: 2 - lr: 0.01 - n_est: 1024 - neu == 0.7961739340629059 
-Baseline: 1.4186468600852602 - Best: 0.7868811302453775 - Model: 0.7961739340629059 
-RMSE GradientBoosting - vector: nrc - criterion: friedman_mse - min_split: 2 - lr: 0.005 - n_est: 8 - neu == 0.79289366195254 
-Baseline: 1.4186468600852602 - Best: 0.7868811302453775 - Model: 0.79289366195254 
-RMSE GradientBoosting - vector: nrc - criterion: friedman_mse - min_split: 2 - lr: 0.005 - n_est: 16 - neu == 0.7924560287675575 
-Baseline: 1.4186468600852602 - Best: 0.7868811302453775 - Model: 0.7924560287675575 
-RMSE GradientBoosting - vector: nrc - criterion: friedman_mse - min_split: 2 - lr: 0.005 - n_est: 32 - neu == 0.7924850674117262 
-Baseline: 1.4186468600852602 - Best: 0.7868811302453775 - Model: 0.7924850674117262 
-RMSE GradientBoosting - vector: nrc - criterion: friedman_mse - min_split: 2 - lr: 0.005 - n_est: 64 - neu == 0.7915930125993518 
-Baseline: 1.4186468600852602 - Best: 0.7868811302453775 - Model: 0.7915930125993518 
-RMSE GradientBoosting - vector: nrc - criterion: friedman_mse - min_split: 2 - lr: 0.005 - n_est: 128 - neu == 0.7910914752694449 
-Baseline: 1.4186468600852602 - Best: 0.7868811302453775 - Model: 0.7910914752694449 
-RMSE GradientBoosting - vector: nrc - criterion: friedman_mse - min_split: 2 - lr: 0.005 - n_est: 256 - neu == 0.7909504289815299 
-Baseline: 1.4186468600852602 - Best: 0.7868811302453775 - Model: 0.7909504289815299 
-RMSE GradientBoosting - vector: nrc - criterion: friedman_mse - min_split: 2 - lr: 0.005 - n_est: 512 - neu == 0.7912340785549924 
-Baseline: 1.4186468600852602 - Best: 0.7868811302453775 - Model: 0.7912340785549924 
-RMSE GradientBoosting - vector: nrc - criterion: friedman_mse - min_split: 2 - lr: 0.005 - n_est: 1024 - neu == 0.7919793430948203 
-Baseline: 1.4186468600852602 - Best: 0.7868811302453775 - Model: 0.7919793430948203 
-RMSE GradientBoosting - vector: nrc - criterion: friedman_mse - min_split: 2 - lr: 0.005 - n_est: 2048 - neu == 0.7962867557233619 
-Baseline: 1.4186468600852602 - Best: 0.7868811302453775 - Model: 0.7962867557233619 
-RMSE GradientBoosting - vector: nrc - criterion: friedman_mse - min_split: 2 - lr: 0.001 - n_est: 8 - neu == 0.7929774484095471 
-Baseline: 1.4186468600852602 - Best: 0.7868811302453775 - Model: 0.7929774484095471 
-RMSE GradientBoosting - vector: nrc - criterion: friedman_mse - min_split: 2 - lr: 0.001 - n_est: 16 - neu == 0.7930479993433415 
-Baseline: 1.4186468600852602 - Best: 0.7868811302453775 - Model: 0.7930479993433415 
-RMSE GradientBoosting - vector: nrc - criterion: friedman_mse - min_split: 2 - lr: 0.001 - n_est: 32 - neu == 0.7929640344707318 
-Baseline: 1.4186468600852602 - Best: 0.7868811302453775 - Model: 0.7929640344707318 
-RMSE GradientBoosting - vector: nrc - criterion: friedman_mse - min_split: 2 - lr: 0.001 - n_est: 64 - neu == 0.7927257060663263 
-Baseline: 1.4186468600852602 - Best: 0.7868811302453775 - Model: 0.7927257060663263 
-RMSE GradientBoosting - vector: nrc - criterion: friedman_mse - min_split: 2 - lr: 0.001 - n_est: 128 - neu == 0.7923843862244351 
-Baseline: 1.4186468600852602 - Best: 0.7868811302453775 - Model: 0.7923843862244351 
-RMSE GradientBoosting - vector: nrc - criterion: friedman_mse - min_split: 2 - lr: 0.001 - n_est: 256 - neu == 0.7915118185486831 
-Baseline: 1.4186468600852602 - Best: 0.7868811302453775 - Model: 0.7915118185486831 
-RMSE GradientBoosting - vector: nrc - criterion: friedman_mse - min_split: 2 - lr: 0.001 - n_est: 512 - neu == 0.7909428535331349 
-Baseline: 1.4186468600852602 - Best: 0.7868811302453775 - Model: 0.7909428535331349 
-RMSE GradientBoosting - vector: nrc - criterion: friedman_mse - min_split: 2 - lr: 0.001 - n_est: 1024 - neu == 0.7907792263845044 
-Baseline: 1.4186468600852602 - Best: 0.7868811302453775 - Model: 0.7907792263845044 
-RMSE GradientBoosting - vector: nrc - criterion: friedman_mse - min_split: 2 - lr: 0.001 - n_est: 2048 - neu == 0.7906779053980888 
-Baseline: 1.4186468600852602 - Best: 0.7868811302453775 - Model: 0.7906779053980888 
-RMSE GradientBoosting - vector: nrc - criterion: friedman_mse - min_split: 2 - lr: 0.001 - n_est: 4096 - neu == 0.792467613835702 
-Baseline: 1.4186468600852602 - Best: 0.7868811302453775 - Model: 0.792467613835702 
-
-neu 
-Baseline: 1.4186468600852602 
-Best: 0.7868811302453775 
-
+RMSE GradientBoosting - vector: merge - criterion: friedman_mse - min_split: 2 - lr: 0.5 - n_est: 8 - con == 0.7121893516192498 
+Baseline: 0.8554327330832592 - Best: 0.7121893516192498 - Model: 0.7121893516192498 
+RMSE GradientBoosting - vector: merge - criterion: friedman_mse - min_split: 2 - lr: 0.5 - n_est: 16 - con == 0.7197858661145459 
+Baseline: 0.8554327330832592 - Best: 0.7121893516192498 - Model: 0.7197858661145459 
+RMSE GradientBoosting - vector: merge - criterion: friedman_mse - min_split: 2 - lr: 0.5 - n_est: 32 - con == 0.7355470021075861 
+Baseline: 0.8554327330832592 - Best: 0.7121893516192498 - Model: 0.7355470021075861 
+RMSE GradientBoosting - vector: merge - criterion: friedman_mse - min_split: 2 - lr: 0.1 - n_est: 8 - con == 0.7092553794858073 
+Baseline: 0.8554327330832592 - Best: 0.7092553794858073 - Model: 0.7092553794858073 
+RMSE GradientBoosting - vector: merge - criterion: friedman_mse - min_split: 2 - lr: 0.1 - n_est: 16 - con == 0.705975047281787 
+Baseline: 0.8554327330832592 - Best: 0.705975047281787 - Model: 0.705975047281787 
+RMSE GradientBoosting - vector: merge - criterion: friedman_mse - min_split: 2 - lr: 0.1 - n_est: 32 - con == 0.7030058312679492 
+Baseline: 0.8554327330832592 - Best: 0.7030058312679492 - Model: 0.7030058312679492 
+RMSE GradientBoosting - vector: merge - criterion: friedman_mse - min_split: 2 - lr: 0.1 - n_est: 64 - con == 0.7017151330177479 
+Baseline: 0.8554327330832592 - Best: 0.7017151330177479 - Model: 0.7017151330177479 
+RMSE GradientBoosting - vector: merge - criterion: friedman_mse - min_split: 2 - lr: 0.1 - n_est: 128 - con == 0.7063273162940933 
+Baseline: 0.8554327330832592 - Best: 0.7017151330177479 - Model: 0.7063273162940933 
+RMSE GradientBoosting - vector: merge - criterion: friedman_mse - min_split: 2 - lr: 0.1 - n_est: 256 - con == 0.7106204153650658 
+Baseline: 0.8554327330832592 - Best: 0.7017151330177479 - Model: 0.7106204153650658 
+RMSE GradientBoosting - vector: merge - criterion: friedman_mse - min_split: 2 - lr: 0.05 - n_est: 8 - con == 0.7137119719220185 
+Baseline: 0.8554327330832592 - Best: 0.7017151330177479 - Model: 0.7137119719220185 
+RMSE GradientBoosting - vector: merge - criterion: friedman_mse - min_split: 2 - lr: 0.05 - n_est: 16 - con == 0.7099686925854984 
+Baseline: 0.8554327330832592 - Best: 0.7017151330177479 - Model: 0.7099686925854984 
+RMSE GradientBoosting - vector: merge - criterion: friedman_mse - min_split: 2 - lr: 0.05 - n_est: 32 - con == 0.7063826137105835 
+Baseline: 0.8554327330832592 - Best: 0.7017151330177479 - Model: 0.7063826137105835 
+RMSE GradientBoosting - vector: merge - criterion: friedman_mse - min_split: 2 - lr: 0.05 - n_est: 64 - con == 0.70221266302233 
+Baseline: 0.8554327330832592 - Best: 0.7017151330177479 - Model: 0.70221266302233 
+RMSE GradientBoosting - vector: merge - criterion: friedman_mse - min_split: 2 - lr: 0.05 - n_est: 128 - con == 0.7003382585573775 
+Baseline: 0.8554327330832592 - Best: 0.7003382585573775 - Model: 0.7003382585573775 
+RMSE GradientBoosting - vector: merge - criterion: friedman_mse - min_split: 2 - lr: 0.05 - n_est: 256 - con == 0.704789342084846 
+Baseline: 0.8554327330832592 - Best: 0.7003382585573775 - Model: 0.704789342084846 
+RMSE GradientBoosting - vector: merge - criterion: friedman_mse - min_split: 2 - lr: 0.05 - n_est: 512 - con == 0.709241921790744 
+Baseline: 0.8554327330832592 - Best: 0.7003382585573775 - Model: 0.709241921790744 
+RMSE GradientBoosting - vector: merge - criterion: friedman_mse - min_split: 2 - lr: 0.01 - n_est: 8 - con == 0.7179296677873369 
+Baseline: 0.8554327330832592 - Best: 0.7003382585573775 - Model: 0.7179296677873369 
+RMSE GradientBoosting - vector: merge - criterion: friedman_mse - min_split: 2 - lr: 0.01 - n_est: 16 - con == 0.7168938072857071 
+Baseline: 0.8554327330832592 - Best: 0.7003382585573775 - Model: 0.7168938072857071 
+RMSE GradientBoosting - vector: merge - criterion: friedman_mse - min_split: 2 - lr: 0.01 - n_est: 32 - con == 0.7146268129525044 
+Baseline: 0.8554327330832592 - Best: 0.7003382585573775 - Model: 0.7146268129525044 
+RMSE GradientBoosting - vector: merge - criterion: friedman_mse - min_split: 2 - lr: 0.01 - n_est: 64 - con == 0.7111055032345368 
+Baseline: 0.8554327330832592 - Best: 0.7003382585573775 - Model: 0.7111055032345368 
+RMSE GradientBoosting - vector: merge - criterion: friedman_mse - min_split: 2 - lr: 0.01 - n_est: 128 - con == 0.7067162405755603 
+Baseline: 0.8554327330832592 - Best: 0.7003382585573775 - Model: 0.7067162405755603 
+RMSE GradientBoosting - vector: merge - criterion: friedman_mse - min_split: 2 - lr: 0.01 - n_est: 256 - con == 0.7038110542613205 
+Baseline: 0.8554327330832592 - Best: 0.7003382585573775 - Model: 0.7038110542613205 
+RMSE GradientBoosting - vector: merge - criterion: friedman_mse - min_split: 2 - lr: 0.01 - n_est: 512 - con == 0.7018002677919212 
+Baseline: 0.8554327330832592 - Best: 0.7003382585573775 - Model: 0.7018002677919212 
+RMSE GradientBoosting - vector: merge - criterion: friedman_mse - min_split: 2 - lr: 0.01 - n_est: 1024 - con == 0.7025058800033507 
+Baseline: 0.8554327330832592 - Best: 0.7003382585573775 - Model: 0.7025058800033507 
+RMSE GradientBoosting - vector: merge - criterion: friedman_mse - min_split: 2 - lr: 0.01 - n_est: 2048 - con == 0.707623215836407 
+Baseline: 0.8554327330832592 - Best: 0.7003382585573775 - Model: 0.707623215836407 
+RMSE GradientBoosting - vector: merge - criterion: friedman_mse - min_split: 2 - lr: 0.005 - n_est: 8 - con == 0.7186623020641464 
+Baseline: 0.8554327330832592 - Best: 0.7003382585573775 - Model: 0.7186623020641464 
+RMSE GradientBoosting - vector: merge - criterion: friedman_mse - min_split: 2 - lr: 0.005 - n_est: 16 - con == 0.7180434826434797 
+Baseline: 0.8554327330832592 - Best: 0.7003382585573775 - Model: 0.7180434826434797 
+RMSE GradientBoosting - vector: merge - criterion: friedman_mse - min_split: 2 - lr: 0.005 - n_est: 32 - con == 0.716497791568875 
+Baseline: 0.8554327330832592 - Best: 0.7003382585573775 - Model: 0.716497791568875 
+RMSE GradientBoosting - vector: merge - criterion: friedman_mse - min_split: 2 - lr: 0.005 - n_est: 64 - con == 0.7146886889164387 
+Baseline: 0.8554327330832592 - Best: 0.7003382585573775 - Model: 0.7146886889164387 
+RMSE GradientBoosting - vector: merge - criterion: friedman_mse - min_split: 2 - lr: 0.005 - n_est: 128 - con == 0.7111261461216203 
+Baseline: 0.8554327330832592 - Best: 0.7003382585573775 - Model: 0.7111261461216203 
+RMSE GradientBoosting - vector: merge - criterion: friedman_mse - min_split: 2 - lr: 0.005 - n_est: 256 - con == 0.7069001690223303 
+Baseline: 0.8554327330832592 - Best: 0.7003382585573775 - Model: 0.7069001690223303 
+RMSE GradientBoosting - vector: merge - criterion: friedman_mse - min_split: 2 - lr: 0.005 - n_est: 512 - con == 0.7032291621712787 
+Baseline: 0.8554327330832592 - Best: 0.7003382585573775 - Model: 0.7032291621712787 
+RMSE GradientBoosting - vector: merge - criterion: friedman_mse - min_split: 2 - lr: 0.005 - n_est: 1024 - con == 0.700744347927629 
+Baseline: 0.8554327330832592 - Best: 0.7003382585573775 - Model: 0.700744347927629 
+RMSE GradientBoosting - vector: merge - criterion: friedman_mse - min_split: 2 - lr: 0.005 - n_est: 2048 - con == 0.7014438730046189 
+Baseline: 0.8554327330832592 - Best: 0.7003382585573775 - Model: 0.7014438730046189 
+RMSE GradientBoosting - vector: merge - criterion: friedman_mse - min_split: 2 - lr: 0.005 - n_est: 4096 - con == 0.7053164451982766 
+Baseline: 0.8554327330832592 - Best: 0.7003382585573775 - Model: 0.7053164451982766 
+RMSE GradientBoosting - vector: merge - criterion: friedman_mse - min_split: 2 - lr: 0.001 - n_est: 8 - con == 0.7192732280121965 
+Baseline: 0.8554327330832592 - Best: 0.7003382585573775 - Model: 0.7192732280121965 
+RMSE GradientBoosting - vector: merge - criterion: friedman_mse - min_split: 2 - lr: 0.001 - n_est: 16 - con == 0.7189094544514079 
+Baseline: 0.8554327330832592 - Best: 0.7003382585573775 - Model: 0.7189094544514079 
+RMSE GradientBoosting - vector: merge - criterion: friedman_mse - min_split: 2 - lr: 0.001 - n_est: 32 - con == 0.7188415744818556 
+Baseline: 0.8554327330832592 - Best: 0.7003382585573775 - Model: 0.7188415744818556 
+RMSE GradientBoosting - vector: merge - criterion: friedman_mse - min_split: 2 - lr: 0.001 - n_est: 64 - con == 0.7182468328251425 
+Baseline: 0.8554327330832592 - Best: 0.7003382585573775 - Model: 0.7182468328251425 
+RMSE GradientBoosting - vector: merge - criterion: friedman_mse - min_split: 2 - lr: 0.001 - n_est: 128 - con == 0.7172748615266447 
+Baseline: 0.8554327330832592 - Best: 0.7003382585573775 - Model: 0.7172748615266447 
+RMSE GradientBoosting - vector: merge - criterion: friedman_mse - min_split: 2 - lr: 0.001 - n_est: 256 - con == 0.7153436205960428 
+Baseline: 0.8554327330832592 - Best: 0.7003382585573775 - Model: 0.7153436205960428 
+RMSE GradientBoosting - vector: merge - criterion: friedman_mse - min_split: 2 - lr: 0.001 - n_est: 512 - con == 0.7126371885787857 
+Baseline: 0.8554327330832592 - Best: 0.7003382585573775 - Model: 0.7126371885787857 
+RMSE GradientBoosting - vector: merge - criterion: friedman_mse - min_split: 2 - lr: 0.001 - n_est: 1024 - con == 0.708243556362034 
+Baseline: 0.8554327330832592 - Best: 0.7003382585573775 - Model: 0.708243556362034 
+RMSE GradientBoosting - vector: merge - criterion: friedman_mse - min_split: 2 - lr: 0.001 - n_est: 2048 - con == 0.703697895572941 
+Baseline: 0.8554327330832592 - Best: 0.7003382585573775 - Model: 0.703697895572941 
+RMSE GradientBoosting - vector: merge - criterion: friedman_mse - min_split: 2 - lr: 0.001 - n_est: 4096 - con == 0.7007740788639911 
+Baseline: 0.8554327330832592 - Best: 0.7003382585573775 - Model: 0.7007740788639911 
+RMSE GradientBoosting - vector: merge - criterion: friedman_mse - min_split: 2 - lr: 0.5 - n_est: 8 - ext == 0.8077760110420318 
+Baseline: 0.8099961790903661 - Best: 0.8077760110420318 - Model: 0.8077760110420318 
+RMSE GradientBoosting - vector: merge - criterion: friedman_mse - min_split: 2 - lr: 0.5 - n_est: 16 - ext == 0.8148028986336275 
+Baseline: 0.8099961790903661 - Best: 0.8077760110420318 - Model: 0.8148028986336275 
+RMSE GradientBoosting - vector: merge - criterion: friedman_mse - min_split: 2 - lr: 0.5 - n_est: 32 - ext == 0.8321623719384611 
+Baseline: 0.8099961790903661 - Best: 0.8077760110420318 - Model: 0.8321623719384611 
+RMSE GradientBoosting - vector: merge - criterion: friedman_mse - min_split: 2 - lr: 0.1 - n_est: 8 - ext == 0.8023996792789225 
+Baseline: 0.8099961790903661 - Best: 0.8023996792789225 - Model: 0.8023996792789225 
+RMSE GradientBoosting - vector: merge - criterion: friedman_mse - min_split: 2 - lr: 0.1 - n_est: 16 - ext == 0.8004719746652851 
+Baseline: 0.8099961790903661 - Best: 0.8004719746652851 - Model: 0.8004719746652851 
+RMSE GradientBoosting - vector: merge - criterion: friedman_mse - min_split: 2 - lr: 0.1 - n_est: 32 - ext == 0.7993715604301898 
+Baseline: 0.8099961790903661 - Best: 0.7993715604301898 - Model: 0.7993715604301898 
+RMSE GradientBoosting - vector: merge - criterion: friedman_mse - min_split: 2 - lr: 0.1 - n_est: 64 - ext == 0.7994354793052281 
+Baseline: 0.8099961790903661 - Best: 0.7993715604301898 - Model: 0.7994354793052281 
+RMSE GradientBoosting - vector: merge - criterion: friedman_mse - min_split: 2 - lr: 0.1 - n_est: 128 - ext == 0.8023527465111785 
+Baseline: 0.8099961790903661 - Best: 0.7993715604301898 - Model: 0.8023527465111785 
+RMSE GradientBoosting - vector: merge - criterion: friedman_mse - min_split: 2 - lr: 0.1 - n_est: 256 - ext == 0.8109216075662579 
+Baseline: 0.8099961790903661 - Best: 0.7993715604301898 - Model: 0.8109216075662579 
+RMSE GradientBoosting - vector: merge - criterion: friedman_mse - min_split: 2 - lr: 0.05 - n_est: 8 - ext == 0.8045233350957218 
+Baseline: 0.8099961790903661 - Best: 0.7993715604301898 - Model: 0.8045233350957218 
+RMSE GradientBoosting - vector: merge - criterion: friedman_mse - min_split: 2 - lr: 0.05 - n_est: 16 - ext == 0.8027630798820073 
+Baseline: 0.8099961790903661 - Best: 0.7993715604301898 - Model: 0.8027630798820073 
+RMSE GradientBoosting - vector: merge - criterion: friedman_mse - min_split: 2 - lr: 0.05 - n_est: 32 - ext == 0.7993891865902001 
+Baseline: 0.8099961790903661 - Best: 0.7993715604301898 - Model: 0.7993891865902001 
+RMSE GradientBoosting - vector: merge - criterion: friedman_mse - min_split: 2 - lr: 0.05 - n_est: 64 - ext == 0.7986862695832835 
+Baseline: 0.8099961790903661 - Best: 0.7986862695832835 - Model: 0.7986862695832835 
+RMSE GradientBoosting - vector: merge - criterion: friedman_mse - min_split: 2 - lr: 0.05 - n_est: 128 - ext == 0.7989112305443885 
+Baseline: 0.8099961790903661 - Best: 0.7986862695832835 - Model: 0.7989112305443885 
+RMSE GradientBoosting - vector: merge - criterion: friedman_mse - min_split: 2 - lr: 0.05 - n_est: 256 - ext == 0.8017131858489567 
+Baseline: 0.8099961790903661 - Best: 0.7986862695832835 - Model: 0.8017131858489567 
+RMSE GradientBoosting - vector: merge - criterion: friedman_mse - min_split: 2 - lr: 0.05 - n_est: 512 - ext == 0.8061542351778239 
+Baseline: 0.8099961790903661 - Best: 0.7986862695832835 - Model: 0.8061542351778239 
+RMSE GradientBoosting - vector: merge - criterion: friedman_mse - min_split: 2 - lr: 0.01 - n_est: 8 - ext == 0.8076653574540362 
+Baseline: 0.8099961790903661 - Best: 0.7986862695832835 - Model: 0.8076653574540362 
+RMSE GradientBoosting - vector: merge - criterion: friedman_mse - min_split: 2 - lr: 0.01 - n_est: 16 - ext == 0.8066729163387001 
+Baseline: 0.8099961790903661 - Best: 0.7986862695832835 - Model: 0.8066729163387001 
+RMSE GradientBoosting - vector: merge - criterion: friedman_mse - min_split: 2 - lr: 0.01 - n_est: 32 - ext == 0.8050016042533127 
+Baseline: 0.8099961790903661 - Best: 0.7986862695832835 - Model: 0.8050016042533127 
+RMSE GradientBoosting - vector: merge - criterion: friedman_mse - min_split: 2 - lr: 0.01 - n_est: 64 - ext == 0.8027312184268076 
+Baseline: 0.8099961790903661 - Best: 0.7986862695832835 - Model: 0.8027312184268076 
+RMSE GradientBoosting - vector: merge - criterion: friedman_mse - min_split: 2 - lr: 0.01 - n_est: 128 - ext == 0.8004996452294572 
+Baseline: 0.8099961790903661 - Best: 0.7986862695832835 - Model: 0.8004996452294572 
