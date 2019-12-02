@@ -40,13 +40,13 @@ def predict():
 
     for uid in userids:
         # Predict baseline
-        prediction = [predict('age_model.pkl', df['oxford']),
-                        int(predict('gender_model.pkl', df['liwc'])),
-                        predict('ext_model.pkl', df['liwc_nrc']),
-                        predict('neu_model.pkl', df['liwc_nrc']),
-                        predict('agr_model.pkl', df['liwc_nrc']),
-                        predict('con_model.pkl', df['liwc_nrc']),
-                        predict('ope_model.pkl', df['liwc_nrc'])]
+        prediction = [predict('age_model.pkl', df['oxford'][df['userid'] == uid]),
+                        int(predict('gender_model.pkl', df['liwc'][df['userid'] == uid])),
+                        predict('ext_model.pkl', df['liwc_nrc'][df['userid'] == uid]),
+                        predict('neu_model.pkl', df['liwc_nrc'][df['userid'] == uid]),
+                        predict('agr_model.pkl', df['liwc_nrc'][df['userid'] == uid]),
+                        predict('con_model.pkl', df['liwc_nrc'][df['userid'] == uid]),
+                        predict('ope_model.pkl', df['liwc_nrc'][df['userid'] == uid])]
 
         make_xml(save_dir=output_path, uid=uid, age_group=prediction[0], gender=prediction[1], extrovert=prediction[2],
                  neurotic=prediction[3], agreeable=prediction[4], conscientious=prediction[5], _open=prediction[6])
