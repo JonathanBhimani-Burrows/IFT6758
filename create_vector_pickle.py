@@ -65,6 +65,7 @@ def create_merge_df(df_nrc, df_liwc, df_relation, df_profile, df_image):
 
         vec = []
         for col in df_image.columns[1:]:
+            pdb.set_trace()
             index = df.index[df_image['userId'] == user]
             row = df_image[col].loc[index]
             value = row.values[0]
