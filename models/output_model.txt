@@ -1,0 +1,2 @@
+RMSE GradientBoosting - vector: merge - criterion: friedman_mse - min_split: 2 - lr: 0.001 - n_est: 4096 - ope == 0.618542557575032
+Baseline: 0.6314540497743321 - Best: 0.618542557575032 
