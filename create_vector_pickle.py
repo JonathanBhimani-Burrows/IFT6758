@@ -67,6 +67,7 @@ def create_merge_df(df_nrc, df_liwc, df_relation, df_profile, df_image):
         for col in df_image.columns[1:]:
             asd = df_image['userId'] == user
             qwe = df_image[col].loc[asd]
+            pdb.set_trace()
             zxc = qwe.values[0]
             vec.append(zxc)
         df['oxford'].loc[placement] = vec
