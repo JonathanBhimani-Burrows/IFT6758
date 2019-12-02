@@ -75,7 +75,7 @@ if __name__ == '__main__':
     f_model = open("models/output_model.txt", "w+")
 
     baseline = [3.9086905263157825, 3.445616842105264, 3.486857894736829, 3.5839042105263155, 2.7324242105263203]
-    labels = ['neu', 'con', 'ext', 'agr', 'ope']
+    labels = ['con', 'ext', 'agr', 'ope', 'neu']
 
     kf = KFold(n_splits=10, shuffle=True)
 
@@ -141,19 +141,19 @@ if __name__ == '__main__':
         all_best.append(best)
         all_baseline.append(base_rmse)
 
-        for cpt in range(len(labels)):
-            print('\n')
-            print(labels[cpt])
-            print('Baseline:', all_baseline[cpt])
-            print('Best:', all_best[cpt])
-            print('\n')
-
-            f.write('\r\n')
-            f.write(labels[cpt] + ' \r\n')
-            f.write('Baseline: ' + str(all_baseline[cpt]) + ' \r\n')
-            f.write('Best: ' + str(all_best[cpt]) + ' \r\n')
-            f.write('\r\n')
-
+    for cpt in range(len(labels)):
         print('\n')
+        print(labels[cpt])
+        print('Baseline:', all_baseline[cpt])
+        print('Best:', all_best[cpt])
+        print('\n')
+
         f.write('\r\n')
-        f.flush()
+        f.write(labels[cpt] + ' \r\n')
+        f.write('Baseline: ' + str(all_baseline[cpt]) + ' \r\n')
+        f.write('Best: ' + str(all_best[cpt]) + ' \r\n')
+        f.write('\r\n')
+
+    print('\n')
+    f.write('\r\n')
+    f.flush()
