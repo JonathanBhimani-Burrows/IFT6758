@@ -7,6 +7,9 @@ import utils.dataloader
 from predictors.gender_predictor import simple_gender_predictor
 from utils.save_model import load_model
 import pickle
+import pandas as pd
+import numpy as np
+from create_vector_pickle import create_merge_df
 
 
 from sklearn.model_selection import KFold
@@ -15,8 +18,8 @@ from sklearn.metrics import mean_squared_error
 
 def get_predictions(filename, X_test):
     # load the model from disk
-
-    loaded_model = pickle.load(open(filename, 'rb'))
+    path = os.path.join('models', filename)
+    loaded_model = pickle.load(open(path, 'rb'))
     predictions = loaded_model.score(X_test)
 
     return predictions
@@ -27,50 +30,23 @@ def predict():
         print('create output_path:', output_path)
         os.makedirs(output_path)
 
-    baseline_data_path = '/home/mila/teaching/user06/submissions/IFT6758/data/Baseline_data.csv'
+    nrc_data, liwc_data, relation_data, profile_data, image_data = utils.dataloader.load_data(args.i)
 
-    baseline_data = Baseline.load_data(baseline_data_path)
-
-    _, _, relation_data, profile_data, image_data = utils.dataloader.load_data(args.i)
+    df = create_merge_df(nrc_data, liwc_data, relation_data, profile_data, image_data)
 
     userids = profile_data['userid'].values
 
-    agglo_model = load_model("/home/mila/teaching/user06/submissions/IFT6758/models/relation_agglo.mdl")
-    
     i = 0
 
     for uid in userids:
         # Predict baseline
-        prediction = [baseline_data['age'][0],
-                        int(baseline_data['gender'][0]),
-                        baseline_data['ext'][0],
-                        baseline_data['neu'][0],
-                        baseline_data['agr'][0],
-                        baseline_data['con'][0],
-                        baseline_data['ope'][0]]
-
-        # Predict age and gender based on relation agglomeration
-        agglo_age_prediction, agglo_gender_prediction = agglo_model.predict(relation_data, uid)
-
-        # Predict gender based on facial hair
-        facial_gender_prediction = simple_gender_predictor(uid, image_data)
-
-        # Predict Psych
-        # TO DO
-
-        # Replace Age Baseline
-        if agglo_age_prediction != -1:
-            prediction[0] = agglo_age_prediction
-
-        # Replace Gender Baseline
-        if facial_gender_prediction != -1:
-            prediction[1] = int(facial_gender_prediction)
-        
-        elif agglo_gender_prediction != -1:
-            prediction[1] = int(agglo_gender_prediction)
-
-        # Replace Psych Baseline
-        # TO DO
+        prediction = [predict('age_model.pkl', df['oxford']),
+                        int(predict('gender_model.pkl', df['liwc'])),
+                        predict('ext_model.pkl', df['liwc_nrc']),
+                        predict('neu_model.pkl', df['liwc_nrc']),
+                        predict('agr_model.pkl', df['liwc_nrc']),
+                        predict('con_model.pkl', df['liwc_nrc']),
+                        predict('ope_model.pkl', df['liwc_nrc'])]
 
         make_xml(save_dir=output_path, uid=uid, age_group=prediction[0], gender=prediction[1], extrovert=prediction[2],
                  neurotic=prediction[3], agreeable=prediction[4], conscientious=prediction[5], _open=prediction[6])

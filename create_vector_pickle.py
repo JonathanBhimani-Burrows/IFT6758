@@ -39,16 +39,7 @@ def load_data(datapath):
     return nrc_text_data, liwc_text_data, relation_data, profile_data, image_data
 
 
-if __name__ == '__main__':
-
-    data = load_data('/home/mila/teaching/user06/Public_Test/')
-
-    df_nrc = data[0].iloc[:, :]
-    df_liwc = data[1].iloc[:, :]
-    df_relation = data[2].iloc[:, :]
-    df_profile = data[3].iloc[:, :]
-    df_image = data[1].iloc[:, :]
-
+def create_merge_df(df_nrc, df_liwc, df_relation, df_profile, df_image):
     df = pd.DataFrame()
     df = df_profile.copy(deep=True)
     df['liwc_nrc'] = np.nan
@@ -78,6 +69,21 @@ if __name__ == '__main__':
         df['oxford'].loc[placement] = vec
 
         df['liwc_nrc'].loc[placement] = df['liwc'].loc[placement] + df['nrc'].loc[placement]
+
+    return df
+
+
+if __name__ == '__main__':
+
+    data = load_data('/home/mila/teaching/user06/Public_Test/')
+
+    df_nrc = data[0].iloc[:, :]
+    df_liwc = data[1].iloc[:, :]
+    df_relation = data[2].iloc[:, :]
+    df_profile = data[3].iloc[:, :]
+    df_image = data[1].iloc[:, :]
+
+    df = create_merge_df(df_nrc, df_liwc, df_relation, df_profile, df_image)
 
     print(len(df['nrc'].loc[0]))
     print(len(df['liwc'].loc[0]))

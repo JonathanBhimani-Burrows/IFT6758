@@ -75,7 +75,7 @@ if __name__ == '__main__':
     f_model = open("models/output_model.txt", "w+")
 
     baseline = [3.9086905263157825, 3.445616842105264, 3.486857894736829, 3.5839042105263155, 2.7324242105263203]
-    labels = ['con', 'ext', 'agr', 'ope', 'neu']
+    labels = ['agr', 'ext', 'ope', 'neu', 'con']
 
     kf = KFold(n_splits=10, shuffle=True)
 
