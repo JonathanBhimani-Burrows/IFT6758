@@ -14,6 +14,17 @@ from sklearn.model_selection import KFold
 from sklearn.metrics import mean_squared_error
 from sklearn.ensemble import GradientBoostingRegressor
 
+def get_psych_predictions(filename, X_test):
+    # load the model from disk
+
+    print('predictions from', filename, '...')
+    path = os.path.join('models', filename)
+    loaded_model = pickle.load(open(path, 'rb'))
+    pdb.set_trace()
+    predictions = loaded_model.predict([X_test.values[0]])
+    print('predictions from', filename, 'done')
+    return predictions
+
 
 def get_predictions(filename, X_test):
     # load the model from disk
@@ -50,11 +61,11 @@ def predict():
         # Predict baseline
         prediction = [baseline_data['age'][0],
                         int(baseline_data['gender'][0]),
-                        get_predictions('ext_model.pkl', df['liwc_nrc'][df['userid'] == uid]),
-                        get_predictions('neu_model.pkl', df['liwc_nrc'][df['userid'] == uid]),
-                        get_predictions('agr_model.pkl', df['liwc_nrc'][df['userid'] == uid]),
-                        get_predictions('con_model.pkl', df['liwc_nrc'][df['userid'] == uid]),
-                        get_predictions('ope_model.pkl', df['liwc_nrc'][df['userid'] == uid])]
+                        get_psych_predictions('ext_model.pkl', df['liwc_nrc'][df['userid'] == uid]),
+                        get_psych_predictions('neu_model.pkl', df['liwc_nrc'][df['userid'] == uid]),
+                        get_psych_predictions('agr_model.pkl', df['liwc_nrc'][df['userid'] == uid]),
+                        get_psych_predictions('con_model.pkl', df['liwc_nrc'][df['userid'] == uid]),
+                        get_psych_predictions('ope_model.pkl', df['liwc_nrc'][df['userid'] == uid])]
 
         make_xml(save_dir=output_path, uid=uid, age_group=prediction[0], gender=prediction[1], extrovert=prediction[2],
                  neurotic=prediction[3], agreeable=prediction[4], conscientious=prediction[5], _open=prediction[6])
