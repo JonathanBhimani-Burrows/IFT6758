@@ -23,6 +23,15 @@ def get_psych_predictions(filename, X_test):
     return predictions[0]
 
 
+def get_prediction_gender(filename, X_test):
+    # load the model from disk
+
+    path = os.path.join('models', filename)
+    loaded_model = pickle.load(open(path, 'rb'))
+    pdb.set_trace()
+    predictions = loaded_model.predict(X_test)
+    return int(predictions[0])
+
 def get_predictions(filename, X_test):
     # load the model from disk
 
@@ -70,7 +79,7 @@ def predict():
         pdb.set_trace()
         index_list = image_data.index[image_data['userId'] == uid].tolist()
         if len(index_list) == 1:
-            gender_prediction = get_predictions('gender_model.pkl', image_data.loc[index_list[0]][2:].values.reshape(1, -1))
+            gender_prediction = get_prediction_gender('gender_model.pkl', image_data.loc[index_list[0]][2:].values.reshape(1, -1))
             prediction[1] = gender_prediction
 
         print('AGE')
