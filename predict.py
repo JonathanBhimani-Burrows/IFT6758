@@ -14,15 +14,6 @@ from sklearn.model_selection import KFold
 from sklearn.metrics import mean_squared_error
 from sklearn.ensemble import GradientBoostingRegressor
 
-def get_psych_predictions(filename, X_test):
-    # load the model from disk
-
-    path = os.path.join('models', filename)
-    loaded_model = pickle.load(open(path, 'rb'))
-    predictions = loaded_model.predict([X_test.values[0]])
-    return predictions[0]
-
-
 def get_prediction_gender(filename, X_test):
     # load the model from disk
 
@@ -39,7 +30,7 @@ def get_predictions(filename, X_test):
     loaded_model = pickle.load(open(path, 'rb'))
     pdb.set_trace()
     predictions = loaded_model.predict(X_test)
-    return predictions
+    return predictions[0]
 
 def predict():
     output_path = args.o
@@ -64,26 +55,23 @@ def predict():
 
         # pdb.set_trace()
         # Predict baseline
-        prediction = [baseline_data['age'][0],
+        prediction = [get_predictions('age_model.pkl', liwc_data[liwc_data['userId'] == uid].iloc[:, 1:]),
+                      #[get_predictions('age_model.pkl', df_merge[df_merge['userId'] == uid].iloc[:, 1:]),
                         int(baseline_data['gender'][0]),
-                        get_psych_predictions('ext_model.pkl', df['liwc_nrc'][df['userid'] == uid]),
-                        get_psych_predictions('neu_model.pkl', df['liwc_nrc'][df['userid'] == uid]),
-                        get_psych_predictions('agr_model.pkl', df['liwc_nrc'][df['userid'] == uid]),
-                        get_psych_predictions('con_model.pkl', df['liwc_nrc'][df['userid'] == uid]),
-                        get_psych_predictions('ope_model.pkl', df['liwc_nrc'][df['userid'] == uid])]
+                        get_predictions('ext_model.pkl', df['liwc_nrc'][df['userid'] == uid]),
+                        get_predictions('neu_model.pkl', df['liwc_nrc'][df['userid'] == uid]),
+                        get_predictions('agr_model.pkl', df['liwc_nrc'][df['userid'] == uid]),
+                        get_predictions('con_model.pkl', df['liwc_nrc'][df['userid'] == uid]),
+                        get_predictions('ope_model.pkl', df['liwc_nrc'][df['userid'] == uid])]
 
         make_xml(save_dir=output_path, uid=uid, age_group=prediction[0], gender=prediction[1], extrovert=prediction[2],
                  neurotic=prediction[3], agreeable=prediction[4], conscientious=prediction[5], _open=prediction[6])
 
         print('GENDER')
-        pdb.set_trace()
         index_list = image_data.index[image_data['userId'] == uid].tolist()
         if len(index_list) == 1:
             gender_prediction = get_prediction_gender('gender_model.pkl', image_data.loc[index_list[0]][2:].values.reshape(1, -1))
             prediction[1] = gender_prediction
-
-        print('AGE')
-        prediction[0] = get_predictions('age_model.pkl', df_merge[df_merge['userId'] == uid].iloc[:, 1:])
 
         i += 1
         if i % 100 == 0:
