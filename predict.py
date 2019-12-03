@@ -20,7 +20,7 @@ def get_psych_predictions(filename, X_test):
     path = os.path.join('models', filename)
     loaded_model = pickle.load(open(path, 'rb'))
     predictions = loaded_model.predict([X_test.values[0]])
-    return predictions
+    return predictions[0]
 
 
 def get_predictions(filename, X_test):
@@ -73,7 +73,7 @@ def predict():
             prediction[1] = gender_prediction
 
         print('AGE')
-        prediction[0] = get_predictions('age_model.pkl', liwc_data[liwc_data['userId'] == uid][1:])
+        prediction[0] = get_predictions('age_model.pkl', liwc_data.loc[liwc_data['userId'] == uid][1:])
 
         i += 1
         if i % 100 == 0:
