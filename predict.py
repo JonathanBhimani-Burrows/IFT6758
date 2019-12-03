@@ -77,7 +77,7 @@ def predict():
         if len(index_list) == 1:
             gender_prediction = get_prediction_gender('gender_model.pkl', image_data.loc[index_list[0]][2:].values.reshape(1, -1))
             prediction[1] = gender_prediction
-            print('GENDER:', gender_prediction, 'id', index_list)
+            print('GENDER:', gender_prediction, 'id', image_data.loc[index_list[0]][1])
 
         i += 1
         if i % 100 == 0:
