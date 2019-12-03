@@ -62,7 +62,7 @@ def predict():
 
         # pdb.set_trace()
         # Predict baseline
-        prediction = [get_predictions('age_model.pkl', df_merge[df_merge['userId'] == uid].iloc[:, 1:]),
+        prediction = [get_predictions('age_model.pkl', liwc_data[liwc_data['userId'] == uid].iloc[:, 1:]),
                         int(baseline_data['gender'][0]),
                         get_psych_predictions('ext_model.pkl', df['liwc_nrc'][df['userid'] == uid]),
                         get_psych_predictions('neu_model.pkl', df['liwc_nrc'][df['userid'] == uid]),
@@ -78,9 +78,6 @@ def predict():
         if len(index_list) == 1:
             gender_prediction = get_prediction_gender('gender_model.pkl', image_data.loc[index_list[0]][2:].values.reshape(1, -1))
             prediction[1] = gender_prediction
-
-        print('AGE')
-        prediction[0] = get_predictions('age_model.pkl', liwc_data[liwc_data['userId'] == uid].iloc[:, 1:])
 
         i += 1
         if i % 100 == 0:
