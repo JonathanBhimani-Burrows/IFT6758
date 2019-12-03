@@ -46,20 +46,20 @@ def predict():
 
 
         # Predict baseline
-        prediction = [predict('age_model.pkl', df[df['userid'] == uid]),
+        prediction = [get_predictions('age_model.pkl', df[df['userid'] == uid]),
                         int(baseline_data['gender'][0]),
-                        predict('ext_model.pkl', liwc_data[liwc_data['userid'] == uid]),
-                        predict('neu_model.pkl', df['liwc_nrc'][df['userid'] == uid]),
-                        predict('agr_model.pkl', df['liwc_nrc'][df['userid'] == uid]),
-                        predict('con_model.pkl', df['liwc_nrc'][df['userid'] == uid]),
-                        predict('ope_model.pkl', df['liwc_nrc'][df['userid'] == uid])]
+                        get_predictions('ext_model.pkl', liwc_data[liwc_data['userid'] == uid]),
+                        get_predictions('neu_model.pkl', df['liwc_nrc'][df['userid'] == uid]),
+                        get_predictions('agr_model.pkl', df['liwc_nrc'][df['userid'] == uid]),
+                        get_predictions('con_model.pkl', df['liwc_nrc'][df['userid'] == uid]),
+                        get_predictions('ope_model.pkl', df['liwc_nrc'][df['userid'] == uid])]
 
         make_xml(save_dir=output_path, uid=uid, age_group=prediction[0], gender=prediction[1], extrovert=prediction[2],
                  neurotic=prediction[3], agreeable=prediction[4], conscientious=prediction[5], _open=prediction[6])
 
         index_list = image_data.index[[image_data['userid'] == uid]].tolist()
         if len(index_list) == 1:
-            gender_prediction = predict('gender_model.pkl', image_data[index_list[0]])
+            gender_prediction = get_predictions('gender_model.pkl', image_data[index_list[0]])
             prediction[1] = gender_prediction
 
         i += 1
