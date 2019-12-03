@@ -18,6 +18,8 @@ from sklearn.metrics import mean_squared_error
 
 def get_predictions(filename, X_test):
     # load the model from disk
+
+    print('predictions from', filename, '...')
     path = os.path.join('models', filename)
     loaded_model = pickle.load(open(path, 'rb'))
     predictions = loaded_model.score(X_test)
