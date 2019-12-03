@@ -47,7 +47,7 @@ def predict():
 
     for uid in userids:
 
-
+        pdb.set_trace()
         # Predict baseline
         prediction = [baseline_data['age'][0],
                         int(baseline_data['gender'][0]),
