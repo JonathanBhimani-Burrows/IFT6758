@@ -34,15 +34,21 @@ def predict():
 
     df = create_merge_df(nrc_data, liwc_data, relation_data, profile_data, image_data)
 
+    baseline_data_path = '/home/mila/teaching/user06/submissions/IFT6758/data/Baseline_data.csv'
+
+    baseline_data = Baseline.load_data(baseline_data_path)
+
     userids = profile_data['userid'].values
 
     i = 0
 
     for uid in userids:
+
+
         # Predict baseline
-        prediction = [predict('age_model.pkl', df['oxford'][df['userid'] == uid]),
-                        int(predict('gender_model.pkl', df['liwc'][df['userid'] == uid])),
-                        predict('ext_model.pkl', df['liwc_nrc'][df['userid'] == uid]),
+        prediction = [predict('age_model.pkl', df[df['userid'] == uid]),
+                        int(baseline_data['gender'][0]),
+                        predict('ext_model.pkl', liwc_data[liwc_data['userid'] == uid]),
                         predict('neu_model.pkl', df['liwc_nrc'][df['userid'] == uid]),
                         predict('agr_model.pkl', df['liwc_nrc'][df['userid'] == uid]),
                         predict('con_model.pkl', df['liwc_nrc'][df['userid'] == uid]),
@@ -50,6 +56,11 @@ def predict():
 
         make_xml(save_dir=output_path, uid=uid, age_group=prediction[0], gender=prediction[1], extrovert=prediction[2],
                  neurotic=prediction[3], agreeable=prediction[4], conscientious=prediction[5], _open=prediction[6])
+
+        index_list = image_data.index[[image_data['userid'] == uid]].tolist()
+        if len(index_list) == 1:
+            gender_prediction = predict('gender_model.pkl', image_data[index_list[0]])
+            prediction[1] = gender_prediction
 
         i += 1
         if i % 100 == 0:

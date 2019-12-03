@@ -64,12 +64,14 @@ def create_merge_df(df_nrc, df_liwc, df_relation, df_profile, df_image):
         df['nrc'].loc[placement] = vec
 
         vec = []
-        for col in df_image.columns[1:]:
-            pdb.set_trace()
-            index = df.index[df_image['userId'] == user]
-            row = df_image[col].loc[index]
-            value = row.values[0]
-            vec.append(value)
+        # df.merge()
+        # for col in df_image.columns[1:]:
+        #
+        #     pdb.set_trace()
+        #     index = df.index[df_image['userId'] == user]
+        #     row = df_image[col].loc[index]
+        #     value = row.values[0]
+        #     vec.append(value)
         df['oxford'].loc[placement] = vec
 
         df['liwc_nrc'].loc[placement] = df['liwc'].loc[placement] + df['nrc'].loc[placement]
@@ -89,9 +91,6 @@ if __name__ == '__main__':
 
     df = create_merge_df(df_nrc, df_liwc, df_relation, df_profile, df_image)
 
-    print(len(df['nrc'].loc[0]))
-    print(len(df['liwc'].loc[0]))
-    print(len(df['liwc_nrc'].loc[0]))
     if not os.path.exists('data/'):
         os.mkdir('data/')
     df.to_pickle('data/df_vector.pkl')
