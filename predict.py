@@ -51,7 +51,7 @@ def predict():
         # Predict baseline
         prediction = [baseline_data['age'][0],
                         int(baseline_data['gender'][0]),
-                        get_predictions('ext_model.pkl', liwc_data[liwc_data['userid'] == uid]),
+                        get_predictions('ext_model.pkl', df['liwc_nrc'][df['userid'] == uid]),
                         get_predictions('neu_model.pkl', df['liwc_nrc'][df['userid'] == uid]),
                         get_predictions('agr_model.pkl', df['liwc_nrc'][df['userid'] == uid]),
                         get_predictions('con_model.pkl', df['liwc_nrc'][df['userid'] == uid]),
@@ -67,7 +67,7 @@ def predict():
             prediction[1] = gender_prediction
 
         print('AGE')
-        prediction[0] = get_predictions('age_model.pkl', df[df['userid'] == uid])
+        prediction[0] = get_predictions('age_model.pkl', liwc_data[liwc_data['userid'] == uid])
 
         i += 1
         if i % 100 == 0:
