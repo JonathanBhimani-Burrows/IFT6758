@@ -73,7 +73,6 @@ def predict():
         make_xml(save_dir=output_path, uid=uid, age_group=prediction[0], gender=prediction[1], extrovert=prediction[2],
                  neurotic=prediction[3], agreeable=prediction[4], conscientious=prediction[5], _open=prediction[6])
 
-        print('GENDER')
         index_list = image_data.index[image_data['userId'] == uid].tolist()
         if len(index_list) == 1:
             gender_prediction = get_prediction_gender('gender_model.pkl', image_data.loc[index_list[0]][2:].values.reshape(1, -1))
