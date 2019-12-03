@@ -17,24 +17,19 @@ from sklearn.ensemble import GradientBoostingRegressor
 def get_psych_predictions(filename, X_test):
     # load the model from disk
 
-    print('predictions from', filename, '...')
     path = os.path.join('models', filename)
     loaded_model = pickle.load(open(path, 'rb'))
-    pdb.set_trace()
     predictions = loaded_model.predict([X_test.values[0]])
-    print('predictions from', filename, 'done')
     return predictions
 
 
 def get_predictions(filename, X_test):
     # load the model from disk
 
-    print('predictions from', filename, '...')
     path = os.path.join('models', filename)
     loaded_model = pickle.load(open(path, 'rb'))
     pdb.set_trace()
     predictions = loaded_model.predict(X_test)
-    print('predictions from', filename, 'done')
     return predictions
 
 def predict():
@@ -71,13 +66,14 @@ def predict():
                  neurotic=prediction[3], agreeable=prediction[4], conscientious=prediction[5], _open=prediction[6])
 
         print('GENDER')
-        index_list = image_data.index[[image_data['userid'] == uid]].tolist()
+        pdb.set_trace()
+        index_list = image_data.index[[image_data['userId'] == uid]].tolist()
         if len(index_list) == 1:
             gender_prediction = get_predictions('gender_model.pkl', image_data[index_list[0]])
             prediction[1] = gender_prediction
 
         print('AGE')
-        prediction[0] = get_predictions('age_model.pkl', liwc_data[liwc_data['userid'] == uid])
+        prediction[0] = get_predictions('age_model.pkl', liwc_data[liwc_data['userId'] == uid])
 
         i += 1
         if i % 100 == 0:
