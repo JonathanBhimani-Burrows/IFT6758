@@ -21,7 +21,7 @@ def get_predictions(filename, X_test):
     print('predictions from', filename, '...')
     path = os.path.join('models', filename)
     loaded_model = pickle.load(open(path, 'rb'))
-    # pdb.set_trace()
+    pdb.set_trace()
     predictions = loaded_model.predict(X_test)
     print('predictions from', filename, 'done')
     return predictions
