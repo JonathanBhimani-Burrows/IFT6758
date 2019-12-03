@@ -20,3 +20,5 @@ RMSE GradientBoosting - vector: merge - criterion: friedman_mse - min_split: 2 -
 Baseline: 0.810030344717069 - Best: 0.7983432905560176 
 RMSE GradientBoosting - vector: merge - criterion: friedman_mse - min_split: 2 - lr: 0.05 - n_est: 128 - ext == 0.7981049771248183 
 Baseline: 0.810030344717069 - Best: 0.7981049771248183 
+RMSE GradientBoosting - vector: merge - criterion: friedman_mse - min_split: 2 - lr: 0.005 - n_est: 1024 - ext == 0.7975526608387126 
+Baseline: 0.810030344717069 - Best: 0.7975526608387126 
