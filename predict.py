@@ -80,7 +80,7 @@ def predict():
             prediction[1] = gender_prediction
 
         print('AGE')
-        prediction[0] = get_predictions('age_model.pkl', df_merge[df_merge['userId'] == uid].iloc[:, 1:])
+        prediction[0] = get_predictions('age_model.pkl', liwc_data[liwc_data['userId'] == uid].iloc[:, 1:])
 
         i += 1
         if i % 100 == 0:
