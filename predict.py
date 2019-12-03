@@ -69,7 +69,7 @@ def predict():
         pdb.set_trace()
         index_list = image_data.index[image_data['userId'] == uid].tolist()
         if len(index_list) == 1:
-            gender_prediction = get_predictions('gender_model.pkl', image_data[index_list[0]][1:])
+            gender_prediction = get_predictions('gender_model.pkl', liwc_data[liwc_data['userId'] == uid].iloc[:, 1:])
             prediction[1] = gender_prediction
 
         print('AGE')
