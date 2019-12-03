@@ -10,10 +10,9 @@ import pickle
 import pandas as pd
 import numpy as np
 from create_vector_pickle import create_merge_df
-
-
 from sklearn.model_selection import KFold
 from sklearn.metrics import mean_squared_error
+from sklearn.ensemble import GradientBoostingRegressor
 
 
 def get_predictions(filename, X_test):
@@ -47,7 +46,7 @@ def predict():
 
     for uid in userids:
 
-        pdb.set_trace()
+        # pdb.set_trace()
         # Predict baseline
         prediction = [baseline_data['age'][0],
                         int(baseline_data['gender'][0]),
