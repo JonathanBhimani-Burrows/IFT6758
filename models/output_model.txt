@@ -1,0 +1,22 @@
+RMSE GradientBoosting - vector: merge - criterion: friedman_mse - min_split: 2 - lr: 0.5 - n_est: 8 - agr == 0.6623443635416973 
+Baseline: 0.736570263805583 - Best: 0.6623443635416973 
+RMSE GradientBoosting - vector: merge - criterion: friedman_mse - min_split: 2 - lr: 0.1 - n_est: 8 - agr == 0.6540119490716589 
+Baseline: 0.736570263805583 - Best: 0.6540119490716589 
+RMSE GradientBoosting - vector: merge - criterion: friedman_mse - min_split: 2 - lr: 0.1 - n_est: 16 - agr == 0.6525274569494863 
+Baseline: 0.736570263805583 - Best: 0.6525274569494863 
+RMSE GradientBoosting - vector: merge - criterion: friedman_mse - min_split: 2 - lr: 0.05 - n_est: 64 - agr == 0.6516149849031263 
+Baseline: 0.736570263805583 - Best: 0.6516149849031263 
+RMSE GradientBoosting - vector: merge - criterion: friedman_mse - min_split: 2 - lr: 0.01 - n_est: 256 - agr == 0.6513668727361481 
+Baseline: 0.736570263805583 - Best: 0.6513668727361481 
+RMSE GradientBoosting - vector: merge - criterion: friedman_mse - min_split: 2 - lr: 0.5 - n_est: 8 - ext == 0.8099568604172056 
+Baseline: 0.810030344717069 - Best: 0.8099568604172056 
+RMSE GradientBoosting - vector: merge - criterion: friedman_mse - min_split: 2 - lr: 0.1 - n_est: 8 - ext == 0.802124761386046 
+Baseline: 0.810030344717069 - Best: 0.802124761386046 
+RMSE GradientBoosting - vector: merge - criterion: friedman_mse - min_split: 2 - lr: 0.1 - n_est: 16 - ext == 0.799714609588394 
+Baseline: 0.810030344717069 - Best: 0.799714609588394 
+RMSE GradientBoosting - vector: merge - criterion: friedman_mse - min_split: 2 - lr: 0.05 - n_est: 32 - ext == 0.7993401543885644 
+Baseline: 0.810030344717069 - Best: 0.7993401543885644 
+RMSE GradientBoosting - vector: merge - criterion: friedman_mse - min_split: 2 - lr: 0.05 - n_est: 64 - ext == 0.7983432905560176 
+Baseline: 0.810030344717069 - Best: 0.7983432905560176 
+RMSE GradientBoosting - vector: merge - criterion: friedman_mse - min_split: 2 - lr: 0.05 - n_est: 128 - ext == 0.7981049771248183 
+Baseline: 0.810030344717069 - Best: 0.7981049771248183 
