@@ -34,7 +34,7 @@ def get_prediction_gender(filename, X_test):
 def get_predictions(filename, X_test):
     # load the model from disk
 
-    path = os.path.join('models', filename)
+    path = os.path.join('/home/mila/teaching/user06/submissions/IFT6758/models', filename)
     loaded_model = pickle.load(open(path, 'rb'))
     predictions = loaded_model.predict(X_test)
     return predictions[0]
