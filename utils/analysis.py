@@ -7,6 +7,7 @@ from sklearn.metrics import confusion_matrix
 import seaborn as sns
 import matplotlib.pyplot as plt
 import argparse
+from math import ceil
 
 
 def _add_line_from_xml(df, xml):
@@ -17,11 +18,11 @@ def _add_line_from_xml(df, xml):
     df = df.append({'userid':predictions['id'],
                     'age':predictions['age_group'],
                     'gender':predictions['gender'],
-                    'ext':predictions['extrovert'],
-                    'neu':predictions['neurotic'],
-                    'agr':predictions['agreeable'],
-                    'con':predictions['conscientious'],
-                    'ope':predictions['open']},
+                    'ext':pd.to_numeric(predictions['extrovert']),
+                    'neu':pd.to_numeric(predictions['neurotic']),
+                    'agr':pd.to_numeric(predictions['agreeable']),
+                    'con':pd.to_numeric(predictions['conscientious']),
+                    'ope':pd.to_numeric(predictions['open'])},
                     ignore_index=True)
 
     return df
@@ -64,8 +65,8 @@ def make_y_dataframe(data_dir, results_dir):
     return y_merged
 
 
-def confusion_mat(df_col1, df_col2, title, labels, save_path):
-    confusion = confusion_matrix(df_col1, df_col2)
+def confusion_mat(df_col_gt, df_col_pred, title, labels, save_path):
+    confusion = confusion_matrix(df_col_gt, df_col_pred)
 
     plt.figure()
     
@@ -84,6 +85,34 @@ def confusion_mat(df_col1, df_col2, title, labels, save_path):
 
     return confusion
 
+def raw_error(df_col_gt, df_col_pred, baseline, title, save_path):
+    df_errors = df_col_pred - df_col_gt
+    x_lim = max([abs(df_errors.max()), abs(df_errors.min())])
+    x_lim = ceil(x_lim * 10) / 10
+
+    plt.figure()
+
+    plt.axvline(x=-baseline, color='k')
+    plt.axvline(x=baseline, color='k')
+    plt.axvline(x=0, color='k', linestyle=":")
+
+    plt.legend(["Baseline = " + str(baseline)])
+    
+    bins = [i/10 for i in range(-40, 40)]
+    hist = df_errors.hist(bins=bins, color='purple', edgecolor='indigo')
+
+    hist.set(xlim=(-x_lim, x_lim))
+    hist.locator_params(axis='y', integer=True)
+    hist.grid(False)
+
+    hist.set_title(title)
+    hist.set_xlabel("Prediction error")
+    hist.set_ylabel("Count")
+
+    plt.savefig(save_path)
+
+    return df_errors
+
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
@@ -97,6 +126,41 @@ if __name__ == '__main__':
     args = parser.parse_args()
 
     y_merged = make_y_dataframe(args.data_dir, args.results_dir)
+
+    ope_errors = raw_error(
+        y_merged['ope_gt'],
+        y_merged['ope_pred'],
+        baseline=0.652,
+        title="Openess prediction errors",
+        save_path=os.path.join(args.save_dir, "ope_error.png"))
+
+    neu_errors = raw_error(
+        y_merged['neu_gt'],
+        y_merged['neu_pred'],
+        baseline=0.798,
+        title="Neurotic prediction errors",
+        save_path=os.path.join(args.save_dir, "neu_error.png"))
+
+    ext_errors = raw_error(
+        y_merged['ext_gt'],
+        y_merged['ext_pred'],
+        baseline=0.788,
+        title="Extrovert prediction errors",
+        save_path=os.path.join(args.save_dir, "ext_error.png"))
+
+    agr_errors = raw_error(
+        y_merged['agr_gt'],
+        y_merged['agr_pred'],
+        baseline=0.665,
+        title="Agreeable prediction errors",
+        save_path=os.path.join(args.save_dir, "agr_error.png"))
+
+    con_errors = raw_error(
+        y_merged['con_gt'],
+        y_merged['con_pred'],
+        baseline=0.734,
+        title="Conscientious prediction errors",
+        save_path=os.path.join(args.save_dir, "con_error.png"))
 
     gender_confusion = confusion_mat(
         y_merged['gender_gt'],
