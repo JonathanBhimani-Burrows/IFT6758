@@ -3,23 +3,10 @@ import pandas as pd
 import xml.etree.cElementTree as ET
 from dataloader import clean_profile_data, load_csv
 from xml_maker import age_list, gender_list
-from pandas_ml import ConfusionMatrix
 from sklearn.metrics import confusion_matrix
 import seaborn as sns
 import matplotlib.pyplot as plt
 import argparse
-
-age_list = [
-    "xx-24",
-    "25-34",
-    "35-49",
-    "50-xx"
-    ]
-
-gender_list = [
-    "male",
-    "female"
-    ]
 
 
 def _add_line_from_xml(df, xml):
@@ -103,7 +90,7 @@ if __name__ == '__main__':
                         default='/home/mila/teaching/user06/submissions/IFT6758/results/')
     args = parser.parse_args()
 
-    y_merged = make_y_dataframe(args.data, args.results_dir)
+    y_merged = make_y_dataframe(args.data_dir, args.results_dir)
 
     gender_confusion = confusion_mat(
         y_merged['gender_gt'],
