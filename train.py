@@ -23,9 +23,6 @@ if __name__ == '__main__':
                         default='/home/mila/teaching/user06/submissions/IFT6758/models/')
     args = parser.parse_args()
 
-    args.i = "data\\Train\\"
-    args.o = "results"
-
     print('input path:', args.i)
     print('output path:', args.o)
     train()
