@@ -48,7 +48,6 @@ def make_y_dataframe(data_dir, results_dir):
 
     ground_truth = load_csv(data_dir, 'Profile', 'Profile.csv')
 
-
     AGE_BINS = [0, 24, 34, 49, 1000]
     ground_truth = clean_profile_data(ground_truth, AGE_BINS)
 
@@ -88,6 +87,8 @@ if __name__ == '__main__':
                         default='/home/mila/teaching/user06/Train/')
     parser.add_argument('-r', '--results_dir', help="path to the results data", type=str,
                         default='/home/mila/teaching/user06/submissions/IFT6758/results/')
+    parser.add_argument('-s', '--save_dir', help="path to the results data", type=str,
+                        default='/home/mila/teaching/user06/submissions/IFT6758/analysis/')               
     args = parser.parse_args()
 
     y_merged = make_y_dataframe(args.data_dir, args.results_dir)
@@ -97,11 +98,11 @@ if __name__ == '__main__':
         y_merged['gender_pred'],
         title="Gender confusion matrix",
         labels=["male", "female"],
-        save_path="analysis\\gender_confusion.png")
+        save_path=os.path.join(args.save_dir, "gender_confusion.png"))
 
     age_confusion = confusion_mat(
         y_merged['age_gt'],
         y_merged['age_pred'],
         title="Age confusion matrix",
         labels=["xx-24", "25-34", "35-49", "50-xx"],
-        save_path="analysis\\age_confusion.png")
+        save_path=os.path.join(args.save_dir, "age_confusion.png"))
