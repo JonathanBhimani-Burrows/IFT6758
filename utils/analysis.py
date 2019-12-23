@@ -130,35 +130,35 @@ if __name__ == '__main__':
     ope_residuals = residual_error(
         y_merged['ope_gt'],
         y_merged['ope_pred'],
-        baseline=0.652,
+        baseline=0.632,
         title="Openess prediction residuals",
         save_path=os.path.join(args.save_dir, "ope_residuals.png"))
 
     neu_residuals = residual_error(
         y_merged['neu_gt'],
         y_merged['neu_pred'],
-        baseline=0.798,
+        baseline=0.793,
         title="Neurotic prediction residuals",
         save_path=os.path.join(args.save_dir, "neu_residuals.png"))
 
     ext_residuals = residual_error(
         y_merged['ext_gt'],
         y_merged['ext_pred'],
-        baseline=0.788,
+        baseline=0.801,
         title="Extrovert prediction residuals",
         save_path=os.path.join(args.save_dir, "ext_residuals.png"))
 
     agr_residuals = residual_error(
         y_merged['agr_gt'],
         y_merged['agr_pred'],
-        baseline=0.665,
+        baseline=0.661,
         title="Agreeable prediction residuals",
         save_path=os.path.join(args.save_dir, "agr_residuals.png"))
 
     con_residuals = residual_error(
         y_merged['con_gt'],
         y_merged['con_pred'],
-        baseline=0.734,
+        baseline=0.720,
         title="Conscientious prediction residuals",
         save_path=os.path.join(args.save_dir, "con_residuals.png"))
 
