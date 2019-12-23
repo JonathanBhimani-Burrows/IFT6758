@@ -70,6 +70,7 @@ def confusion_mat(df_col1, df_col2, title, labels, save_path):
     plt.figure()
     
     ax = sns.heatmap(confusion,
+                     cmap=sns.dark_palette("purple"),
                      annot=True,
                      fmt="d",
                      xticklabels=labels,
