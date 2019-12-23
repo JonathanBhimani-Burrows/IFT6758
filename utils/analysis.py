@@ -59,11 +59,15 @@ def make_y_dataframe(data_dir, results_dir):
 
     y_merged = y_merged.dropna()
 
+    y_merged = y_merged.replace("xx-24", "00-24")
+
     return y_merged
 
 
 def confusion_mat(df_col1, df_col2, title, labels, save_path):
     confusion = confusion_matrix(df_col1, df_col2)
+
+    plt.figure()
     
     ax = sns.heatmap(confusion,
                      annot=True,
