@@ -85,9 +85,9 @@ def confusion_mat(df_col_gt, df_col_pred, title, labels, save_path):
 
     return confusion
 
-def raw_error(df_col_gt, df_col_pred, baseline, title, save_path):
-    df_errors = df_col_pred - df_col_gt
-    x_lim = max([abs(df_errors.max()), abs(df_errors.min())])
+def residual_error(df_col_gt, df_col_pred, baseline, title, save_path):
+    df_residuals = df_col_pred - df_col_gt
+    x_lim = max([abs(df_residuals.max()), abs(df_residuals.min())])
     x_lim = ceil(x_lim * 10) / 10
 
     plt.figure()
@@ -99,19 +99,19 @@ def raw_error(df_col_gt, df_col_pred, baseline, title, save_path):
     plt.legend(["Baseline = " + str(baseline)])
     
     bins = [i/10 for i in range(-40, 40)]
-    hist = df_errors.hist(bins=bins, color='purple', edgecolor='indigo')
+    hist = df_residuals.hist(bins=bins, color='purple', edgecolor='indigo')
 
     hist.set(xlim=(-x_lim, x_lim))
     hist.locator_params(axis='y', integer=True)
     hist.grid(False)
 
     hist.set_title(title)
-    hist.set_xlabel("Prediction error")
+    hist.set_xlabel("Prediction residuals")
     hist.set_ylabel("Count")
 
     plt.savefig(save_path)
 
-    return df_errors
+    return df_residuals
 
 
 if __name__ == '__main__':
@@ -127,40 +127,40 @@ if __name__ == '__main__':
 
     y_merged = make_y_dataframe(args.data_dir, args.results_dir)
 
-    ope_errors = raw_error(
+    ope_residuals = residual_error(
         y_merged['ope_gt'],
         y_merged['ope_pred'],
         baseline=0.652,
-        title="Openess prediction errors",
-        save_path=os.path.join(args.save_dir, "ope_error.png"))
+        title="Openess prediction residuals",
+        save_path=os.path.join(args.save_dir, "ope_residuals.png"))
 
-    neu_errors = raw_error(
+    neu_residuals = residual_error(
         y_merged['neu_gt'],
         y_merged['neu_pred'],
         baseline=0.798,
-        title="Neurotic prediction errors",
-        save_path=os.path.join(args.save_dir, "neu_error.png"))
+        title="Neurotic prediction residuals",
+        save_path=os.path.join(args.save_dir, "neu_residuals.png"))
 
-    ext_errors = raw_error(
+    ext_residuals = residual_error(
         y_merged['ext_gt'],
         y_merged['ext_pred'],
         baseline=0.788,
-        title="Extrovert prediction errors",
-        save_path=os.path.join(args.save_dir, "ext_error.png"))
+        title="Extrovert prediction residuals",
+        save_path=os.path.join(args.save_dir, "ext_residuals.png"))
 
-    agr_errors = raw_error(
+    agr_residuals = residual_error(
         y_merged['agr_gt'],
         y_merged['agr_pred'],
         baseline=0.665,
-        title="Agreeable prediction errors",
-        save_path=os.path.join(args.save_dir, "agr_error.png"))
+        title="Agreeable prediction residuals",
+        save_path=os.path.join(args.save_dir, "agr_residuals.png"))
 
-    con_errors = raw_error(
+    con_residuals = residual_error(
         y_merged['con_gt'],
         y_merged['con_pred'],
         baseline=0.734,
-        title="Conscientious prediction errors",
-        save_path=os.path.join(args.save_dir, "con_error.png"))
+        title="Conscientious prediction residuals",
+        save_path=os.path.join(args.save_dir, "con_residuals.png"))
 
     gender_confusion = confusion_mat(
         y_merged['gender_gt'],
