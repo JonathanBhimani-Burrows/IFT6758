@@ -166,7 +166,7 @@ if __name__ == '__main__':
         y_merged['gender_gt'],
         y_merged['gender_pred'],
         title="Gender confusion matrix",
-        labels=["male", "female"],
+        labels=["female", "male"],
         save_path=os.path.join(args.save_dir, "gender_confusion.png"))
 
     age_confusion = confusion_mat(
